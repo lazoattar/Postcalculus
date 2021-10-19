@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Week 2}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Eigenvectors and Eigenvalues}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Diagonalization}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Rotating Conics}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Week 3}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Partial Derivatives}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Tangent Planes}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Unconstrained Optimization}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Constrained Optimization}{9}{subsection.2.4}%

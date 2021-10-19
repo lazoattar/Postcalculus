@@ -1,0 +1,336 @@
+\documentclass[12pt]{scrartcl}
+\usepackage[sexy]{evan}
+
+\title{Post Calculus}
+\date{2021-2022}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Week 2}
+\subsection{Eigenvectors and Eigenvalues}
+\begin{definition}
+    A $\bold{homogeneous ~linear ~ system}$ is one where $\bold{Ax} = \bold{0}$.
+\end{definition}
+
+\noindent{}The trivial solution is when $\bold{x} = \bold{0}$. Non-trivial solutions exist iff $\det(\bold{A}) = 0$.
+
+\begin{theorem}
+    Let $\bold{A}$ be a square matrix. $$\bold{A\overrightarrow{\bold{v}}} = \lambda \overrightarrow{\bold{v}}$$
+    if and only if $\overrightarrow{\bold{v}}$ is an eigenvector and $\lambda$ is an eigenvalue.
+\end{theorem}
+
+We notice that 
+\begin{align*}
+    \bold{A}\overrightarrow{\bold{v}} = \lambda\overrightarrow{\bold{v}} &\implies \bold{A}\overrightarrow{\bold{v}} = \lambda \bold{I} \overrightarrow{\bold{v}} \\
+    &\implies \overrightarrow{\bold{v}} \left(\bold{A} - \lambda \bold{I} \right) = \bold{0} \\
+    &\implies \det \left(\bold{A} - \lambda \bold{I} \right) = 0.
+\end{align*}
+
+The result above is known as the \alert{characteristeric equation}.
+
+\begin{example}
+    Let $$\bold{A} = \begin{bmatrix} 0 & 1 \\ -4 & 0 \end{bmatrix},$$
+    find the eigenvalues and eigenvectors of $\bold{A}$.
+\end{example}
+
+\noindent{}We first notice that $\det \left(\bold{A} - \lambda \bold{I}\right) = 0$. Meaning that
+$$\det \left(\begin{bmatrix} -\lambda & 1 \\ -4 & -\lambda \end{bmatrix}\right) = 0,$$
+implying that $\lambda^2+4 = 0$. Thus, $\lambda = \pm 2i$. For $\lambda_1 = 2i$, we have
+$$\begin{bmatrix} -2i & 1 \\ -4 & -2i \end{bmatrix} \overrightarrow{\bold{v}} = \bold{0}.$$
+By gaussian elimination we arrive at the first eigenvector $$\overrightarrow{\bold{v}_1} = \begin{pmatrix} 1 \\ 2i \end{pmatrix}.$$ Similarly $$\overrightarrow{\bold{v}_2} = \begin{pmatrix} 1 \\ -2i \end{pmatrix}$$ for $\lambda_2 = -2i$.
+
+\newpage
+\subsection{Diagonalization}
+For $\bold{y} = \bold{A} \bold{x}$, assume $\bold{A}$ has
+a basis of eigenvectors $\bold{x}_1,\bold{x}_2, \dots, 
+\bold{x}_n$, with corresponding eigenvalues $\lambda_1, \lambda_2, \dots, \lambda_n$, and let
+the matrix $$\bold{P} = \begin{pmatrix} \bold{x}_1 & \bold{x}_2 & \cdots & \bold{x}_n \end{pmatrix}$$ be a transformation matix.
+Let $$\bold{y} = \bold{P} \bold{y}' ~ \text{and} ~ \bold{x} = \bold{P} \bold{x}'.$$
+We can then write a new linear system relating $\bold{y}'$ and $\bold{x}'$, giving
+\begin{align*}
+    \bold{P}\bold{y}' = \bold{A}\bold{P} \bold{x}' &\implies \bold{P^{-1}}\bold{P}\bold{y}' = \bold{P^{-1}}\bold{A}\bold{P}\bold{P^{-1}}\bold{P}\bold{x}' \\
+&\implies \bold{y}' = \left ( \bold{P^{-1}}\bold{A}\bold{P} \right) \bold{x}',
+\end{align*}
+where $ \bold{D} = \left ( \bold{P^{-1}}\bold{A}\bold{P} \right) $ is a diagonal matrix such that the diagonals turn out to be the eigenvalues of $\bold{A}$.
+
+\begin{remark}
+    In order to find the diagonalization matrix, begin by finding the eigenvalues and eigenvectors of $\bold{A}$. Then find $\bold{P}$ from the eigenvetors. The diagonlization matrix follows.
+\end{remark}
+
+\begin{example}
+    Diagonalize $$\begin{bmatrix} 7/4 & -\sqrt{3}/4 \\ -\sqrt{3}/4 & 5/4 \end{bmatrix}.$$
+\end{example}
+
+\subsection{Rotating Conics}
+Let $Q$ be a quadratic form such that $$Q = ax_{1}^2+(b+c)x_1x_2+dx_2^2.$$
+We can express this as $$Q = \bold{x}^T \bold{A}\bold{x} = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} a & b \\ c & d \end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \end{bmatrix},$$ where $$\bold{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}.$$
+We can convert the quadratic form to the canonical form by using the diagonalized matrix of $\bold{A}$:
+$$C = \begin{bmatrix} x_1' & x_2' \end{bmatrix} \bold{D}
+\begin{bmatrix} x_1' \\ x_2' \end{bmatrix}.$$ Additionally, note that the transformation matrix is the
+rotation matrix, meaning that
+$$\bold{P} = \begin{bmatrix} \cos x & -\sin x \\ \sin x & \cos x\end{bmatrix}.$$
+
+\begin{theorem}
+Let $Q_n$ be a quadratic form with $n$ dimensions and $C_n$ the corresponding canonical form. Then, for an $n \times n$ matrix $\bold{A}$ and its diagonalized matrix $\bold{D}$,
+    \begin{align*}
+        Q_n &= \begin{bmatrix} x_1 & x_2 & \cdots & x_n \end{bmatrix} \bold{A} \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{bmatrix}, \\
+    C_n &= \begin{bmatrix} x_1' & x_2' & \cdots & x_n' \end{bmatrix} \bold{D} \begin{bmatrix} x_1' \\ x_2' \\ \vdots \\ x_n'\end{bmatrix}.
+    \end{align*}
+\end{theorem}
+If any linear terms are present, they can be expressed as the product of the coefficient matrix and the 
+matrix with each variable. So, $$a_1x_1+a_2x_2+\cdots+a_nx_n = \begin{bmatrix}a_1 & a_2 & \cdots & a_n \end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}.$$
+
+\begin{exercise}
+
+\end{exercise}
+\newpage
+\section{Week 3}
+\subsection{Partial Derivatives}
+Let $f(x,y,z) = 2x^2+3y^2+z^2$. Partial derivatives treat the other variables as constants.
+Thus, $$\frac{\partial f}{\partial x} = 4x, ~ \frac{\partial f}{\partial y} = 6y, ~ \frac{\partial f}{\partial z} = 2.$$
+\begin{definition}
+The \alert{gradient vector} for a function $f$ is $${\displaystyle \nabla f(p)={\begin{bmatrix}{\frac {\partial f}{\partial x_{1}}}(p)\\\vdots \\{\frac {\partial f}{\partial x_{n}}}(p)\end{bmatrix}}.}$$
+\end{definition}
+\begin{definition}
+The \alert{Hessian Matrix} is 
+$${\displaystyle \mathbf {H} _{f}={\begin{bmatrix}{\dfrac {\partial ^{2}f}{\partial x_{1}^{2}}}&{\dfrac {\partial ^{2}f}{\partial x_{1}\,\partial x_{2}}}&\cdots &{\dfrac {\partial ^{2}f}{\partial x_{1}\,\partial x_{n}}}\\[2.2ex]{\dfrac {\partial ^{2}f}{\partial x_{2}\,\partial x_{1}}}&{\dfrac {\partial ^{2}f}{\partial x_{2}^{2}}}&\cdots &{\dfrac {\partial ^{2}f}{\partial x_{2}\,\partial x_{n}}}\\[2.2ex]\vdots &\vdots &\ddots &\vdots \\[2.2ex]{\dfrac {\partial ^{2}f}{\partial x_{n}\,\partial x_{1}}}&{\dfrac {\partial ^{2}f}{\partial x_{n}\,\partial x_{2}}}&\cdots &{\dfrac {\partial ^{2}f}{\partial x_{n}^{2}}}\end{bmatrix}},}$$
+\end{definition}
+
+\begin{theorem}[Schwarz's Theorem]
+    For a function $f:\Omega \rightarrow \mathbb{R}$ defined on a set $\Omega \subset \mathbb{R}^n$, if $\mathbf{p} \in
+    \mathbb{R}^n$ is a point such that some neighborhood of $\mathbf{p}$ is contained in $\Omega$ and $f$ has continuous
+    second partial derivatives at the point $\mathbf{p}$, then $\forall i,j \in \{1,2,\dots,n\}$
+    $$\frac{\partial^2}{\partial x_i \partial x_j}f(\mathbf{p})=\frac{\partial^2}{\partial x_j\partial x_i}f(\mathbf{p}).$$
+\end{theorem}
+\begin{proof}
+    The proof is left as a search on wikipedia :p.
+\end{proof}
+
+\begin{example}
+    Find the gradient and hessian matrix of $f(x,y,z) = 2x^2+3y^2+z^2$.
+\end{example}
+\begin{proof}
+    We find that $$\nabla f = \begin{bmatrix} \dfrac{\partial f}{\partial x} \\[2.2ex] {\dfrac{\partial f}{\partial y}} \\[2.2ex]{\dfrac{\partial f}{\partial z}} \end{bmatrix} = \begin{bmatrix} 4x \\ 6y \\ 2z \end{bmatrix}$$ and
+    $$\mathbf{H}_f = \begin{bmatrix} 4 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & 2 \end{bmatrix}.$$
+\end{proof}
+
+\begin{example}
+    Find the gradient and hessian matrix of $f(x,y) = x^2-3xy+y^2.$
+\end{example}
+\begin{proof}
+    We find that $$\nabla f =  \begin{bmatrix} \dfrac{\partial f}{\partial x} \\[2.2ex] \dfrac{\partial f}{\partial y} \end{bmatrix} = \begin{bmatrix} 2x-3y \\ 2y-3x \end{bmatrix},$$
+    $$\mathbf{H}_f = \begin{bmatrix} 2 & -3 \\ -3 & 2 \end{bmatrix}.$$
+\end{proof}
+\begin{example}
+    Find the gradient and hessian matrix $f(x_1,x_2,x_3) = 9x_1^2+7x_2^2+3x_3^2-2x_1x_2+4x_1x_3-6x_2x_3$.
+\end{example}
+\begin{proof}
+    We find that $$\nabla f = \begin{bmatrix} 18x_1-2x_2+4x_3 \\ -2x_1+14x_2-6x_3 \\ 4x_1-6x_2+6x_3 \end{bmatrix},$$
+    $$\mathbf{H}_f = \begin{bmatrix} 18 & -2 & 4 \\ -2 & 14 & -6 \\ 4 & -6 & 6\end{bmatrix}.$$
+\end{proof}
+\begin{example}
+    Let $x$ be a function of $t$. Find $\dfrac{\partial f}{\partial x}, \dfrac{\partial f}{\partial \dot{x}},
+    \dfrac{\partial f}{\partial \ddot{x}}$, and $\dfrac{df}{dt}$.
+\end{example}
+%
+%\begin{theorem}[Chain Rule for 1 Independent Variable and 2 Intermediate Variables]
+%    Suppose $x=g(t)$ and $y=h(t)$ are differentiable functions of $t$ and $z=f(x,y)$
+%    is a differentiable function of $x$ and $y$. Then $z=f(x(t),y(t))$ is a 
+%    differentiable function of $t$ and
+%    $$\frac{dz}{dy} = \dfrac{\partial z}{\partial x}\dfrac{dx}{dt} + \dfrac{\partial z}{\partial y}\dfrac{dy}{dt}.$$
+%\end{theorem}
+%\begin{proof}
+%\end{proof}
+%
+%\begin{theorem}[Chain Rule for 2 Independent Variable and 2 Intermediate Variables]
+%    Suppose $x=g(u,v)$ and $y=h(u,v)$ are differentiable functions of $u$ and $v$,
+%    and $z=f(x, y)$ is a differentiable function of $x$ and $y$. Then
+%    $z = f(g(u,v),h(u,v))$ is a differentiable function of $u$ and $v$, and
+%    $$\dfrac{\partial z}{\partial u} = \dfrac{\partial z}{\partial x}
+%    \dfrac{\partial x}{\partial u} + \dfrac{\partial z}{\partial y}
+%    \dfrac{\partial y}{\partial u}$$
+%    and
+%    
+%\end{theorem}
+\begin{theorem}[Generalized Chain Rule]
+    Let $w = f(x_1, x_2, \dots, x_m)$ be a differentialble function of $m$
+    independent variables, and for each $i \in \{1,\dots,m\}$, let
+    $x_i = x_i(t_1,t_2,\dots,t_n)$ be a differentiable function of $n$
+    independent variables. Then
+    $$\dfrac{\partial w}{\partial t_j} = \dfrac{\partial w}{\partial x_1}
+    \dfrac{\partial x_1}{\partial t_j}+
+    \dfrac{\partial w}{\partial x_2}\dfrac{\partial x_2}{\partial t_j}+\cdots
+    +\dfrac{\partial w}{\partial x_m}\dfrac{\partial x_m}{\partial t_j}$$
+    for any $j\in \{1,\dots,n\}$.
+\end{theorem}
+\begin{proof}
+   Deez nutz 
+\end{proof}
+
+\subsection{Tangent Planes}
+We proceed by finding the equation of the tangent plane to $x^2-y^2-z^2=1$ at
+$(1,0,0)$. To begin, we find the gradient of $f(x,y,z)=x^2-y^2-z^2$ to be
+$$\nabla f(1,0,0) = \begin{bmatrix} 2 \\ 0 \\ 0 \end{bmatrix}.$$ Then, the "point-slope"
+form of a plane is $$m_x(x-x_1)+m_y(y-y_1)+m_z(z-z_1)=0.$$ Thus, we obtain
+the following tangent plane for our scenario: $2(x-1)=0$.
+
+\subsection{Unconstrained Optimization}
+\begin{definition}
+    A \alert{stationary point} is a critical point in higher dimensions. They
+    can be found from the solution to the system of equations that results
+    from letting the gradient equal zero.
+\end{definition}
+\begin{definition}
+    A hessian is called \alert{positive definite} if all the eigenvalues
+    are positive.
+\end{definition}
+\begin{definition}
+    A hessian is called \alert{negative definite} if all the eigenvalues
+    are negative.
+\end{definition}
+\begin{definition}
+    A hessian is called \alert{positive semidefinite} if all the eigenvalues
+    are nonnegative and there exists at least one eigenvalue that is $0$.
+\end{definition}
+\begin{definition}
+    A hessian is called \alert{negative semidefinite} if all the eignevalues
+    are nonpositive and there exists at least one eigen value that is $0$.
+\end{definition}
+As an alternative to the second derivative test in determining if a critical
+point is a max , min or an inflection point, the \alert{hessian} will be used 
+to determine if a stationary point is a max, min or inflection point.
+
+We can determine if the hessian is "positive" or "negative" by taking a look
+at its eigen values. Let $\mathbf{H}_f$ be the hessian for $f$, a differentiable
+function of $n$ independent variables. Also, let $\Lambda = \{\lambda_i | 1 \leq i \leq n\}$
+be the set of the eigenvalues of $\mathbf{H_f}$. If all elements in $\Lambda$ are positive,
+then the hessian is called \alert{positive definite}, giving a minimum. If all 
+elements in $\Lambda$ are negative, then the hessian is called \alert{negative definite},
+giving a maximum. If $\lambda_i \geq 0$, $\mathbf{H_f}$ is called \alert{positive semidefinite}.
+If $\lambda_i \leq 0$, $\mathbf{H_f}$ is called \alert{negative semidefinite}. If
+one eigenvalue is positive and one eigenvalue is negative, we have a \alert{saddle point}.\
+\begin{example}
+    Find the critical points of $f(x_1, x_2) = x_1^2-2x_1x_2+4x_2^2$.
+\end{example}
+\begin{proof}
+    We begin by finding the gradient of $f$. This is $$\nabla f =
+    \begin{bmatrix} 2x_1-2x_2 \\ -2x_1 + 8x_2 \end{bmatrix}.$$
+    Setting the gradient to zero, we get the following system of equations:
+    \begin{align*}
+        2x_1-2x_2 &= 0 \\
+        -2x_1+8x_2 &= 0.
+    \end{align*}
+    This gives $(x_1, x_2) = (0,0)$. They hessian, $\mathbf{H}_f$ of $f$ is
+    $$\mathbf{H}_f = \begin{bmatrix} 2 & -2 \\ -2 & 8\end{bmatrix}.$$ Since
+    the eigen values of this hessian are both positive, we have a minimum.
+\end{proof}
+
+\begin{example}
+    Find the critical points of $f(x_1,x_2)=-x_1^2+2x_1x_2+3x_2^2+8x_1$. 
+\end{example}
+\begin{proof}
+    We begin by finding the gradient of $f$. This is
+    $$\nabla f  = \begin{bmatrix} -2x_1+2x_2+8 \\ 2x_1+6x_2 \end{bmatrix}.$$
+    Setting the gradient to zero, we get the following system of equations:
+    \begin{align*}
+        -2x_1 + 2x_2 &= -8 \\
+        2x_1+6x_2 &= 0.
+    \end{align*}
+    Solving gives $(x_1, x_2) = (-3, 1)$. The hessian, $\mathbf{H}_f$, of $f$ is
+    $$\mathbf{H}_f = \begin{bmatrix}-2 & 2 \\ 2 & 6 \end{bmatrix}.$$
+    Since one of the eignevalues of this hessian is positive and the other is
+    negative, we have a saddle point.
+\end{proof}
+\begin{example}
+    Find the critical points of $f(x_1,x_2) = \left(x_1-x_2^2\right)\left(x_1-3x_2^2\right)$.
+\end{example}
+\begin{proof}
+    To begin, we distribute to get $f(x_1,x_2) = x_1^2-4x_1x_2^2+3x_2^4$. The
+    gradient of $f$ is then
+    $$\nabla f = \begin{bmatrix} 2x_1-4x_2^2 \\ -8x_1x_2+12x_2^3\end{bmatrix}.$$
+    Setting the gradient to zero and solving the resulting system of equations,
+    we get the following critical point $(x_1,x_2) = (0,0)$. The hessian of $f$
+    is $$\mathbf{H}_f = 
+    \begin{bmatrix} 2 & -8x_2 \\ -8x_2 & -8x_1+36x_2^2\end{bmatrix}
+    = \begin{bmatrix} 2 & 0 \\ 0 & 0 \end{bmatrix}.$$
+    Since one eigenvalue is positive and the other is equal to $0$, the hessian
+    is postive semidefinite.
+\end{proof}
+\begin{example}
+    Kartik and Monica invested $\$20,000$ in the design and the development of a 
+    new product. They can manufacture it for $\$2$ per unit. They hired marketing 
+    consultants to determine the relation between selling price, the amount 
+    spent on advertising, and the number of units that would be sold as a result 
+    of the first two combined. The company determined that units sold would 
+    follow the equation $$2000+4\sqrt{a}-20p.$$ Determine the profit that 
+    Felicia and Megan will make as a function of the money spent on advertising, 
+    a, and the price of the product, p. Maximize that profit.
+\end{example}
+\begin{proof}
+    We first identify that the revenue gained from sales would be
+    $p\left(2000+4\sqrt{a}-20p\right)$. Then, the costs would be 
+    $20000+2\left(2000+4\sqrt{a}-20p\right)+a$. Taking the difference,
+    we get the profit $P$ being
+    \begin{align*}
+        P(a,p) &= p\left(2000+4\sqrt{a}-20p\right)-20000-2\left(2000+4\sqrt{a}-20p\right)-a \\
+               &= 2040p+4p\sqrt{a}-20p^2-24000-8\sqrt{a}-a.
+    \end{align*}
+    The gradient of $P$ is $$\nabla P = \begin{bmatrix} \dfrac{2p-4}{\sqrt{a}}-1 
+    \\ -40p+4\sqrt{a}+2040 \end{bmatrix}.$$ Setting the gradient to $0$ and
+    solving the resulting system of equations, we get that $p=63.25$ and
+    $a=15006.25$. The maximum profit is $\boxed{\$40025}$.
+\end{proof}
+
+\subsection{Constrained Optimization}
+Equality and Inequality constraints
+\begin{definition}
+    The \alert{Lagrangian} is
+    $$L(x,\lambda) = f(x) + \sum_{i=1}^{m} \lambda_i (b_i-g_i(x)),$$
+    where $g_i(x)$ are constraints. 
+\end{definition}
+\begin{example}
+    Maximize $f(x_1,x_2)=5-(x_1-2)^2-2(x_2-1)^2$ subject to $x_1+4x_2=3$. 
+\end{example}
+\begin{proof}
+    We get
+    \begin{align*}
+        \mathcal{L}(x,\lambda) &= f(x_1,x_2) +\lambda(x_1+4x_2-3) \\
+          &= 5-x_1^2+4x_1-4-2x_2^2+4x_2-2 +\lambda(x_1+4x_2-3)\\
+          &=-x_1^2-2x_2^2+4x_1+4x_2-1+\lambda(x_1+4x_2-3)
+    \end{align*}
+    Thus
+    \begin{align*}
+        \nabla \mathcal{L} &= \begin{bmatrix} -2x_1+\lambda+4 \\ -4x_2+4\lambda+4 \\ x_1+4x_2-3\end{bmatrix}=0
+    \end{align*}
+    We get $(x_1,x_2,\lambda) = (5/3, 1/3,-2/3)$. Thus our critical point is
+    $\boxed{(5/3, 1/3, 4)}.$
+\end{proof}
+\begin{example}
+    Let the sun be located at the origin of a coordinate plane. How close
+    does Halley's comet come to the sun on its orbit?
+    $$171.725x^2+171.725y^2+297.37xy+557.178x-557.178y-562.867=0.$$
+\end{example}
+\begin{proof}
+    We seek to optimize the distance from the comet to the sun. Thus,
+    we seek to optimize $f(x,y)=x^2+y^2$. Optimization with the lagrangian
+    follows, where
+    $$\mathcal{L} = x^2+y^2-\lambda().$$
+\end{proof}
+\begin{example}
+    Minimize $L(x)=x_1e^{-(x_1^2+x_2^2)}+\frac{x_1^2+x_2^2}{20}$ subject to 
+    $f(x) = \frac{x_1x_2}{2}+(x_1^2+2)^2+(x_1^2-2)^2/2-2\leq 0$.
+\end{example}
+\begin{proof}
+    We find that
+    $$\nabla L = 
+    \begin{bmatrix} e^{-(x_1^2+x_2^2)}-2x_1^2e^{-(x_1^2+x_2^2)} +x_1/10\\ 
+    -2x_1x_2e^{-(x_1^2+x_2^2)}+x_2/10 \end{bmatrix}=0$$
+    We find that the critical points are $(-1/2,\sqrt{\ln(10)-1/4})$ and
+    $(-1/2,-\sqrt{\ln(10)-1/4})$.
+\end{proof}
+\end{document}
