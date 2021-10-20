@@ -1,70 +1,29 @@
-\documentclass[12pt]{scrartcl}
+%\documentclass[12pt]{scrartcl}
+\documentclass[11pt,twoside=semi,openright,numbers=noenddot]{scrbook}
 \usepackage[sexy]{evan}
+
 
 \title{Post Calculus}
 \date{2021-2022}
 
 \begin{document}
 \maketitle
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={green!50!black},
+    urlcolor={blue!80!black}
+}
 \tableofcontents
 \newpage
 
-\section{Week 2}
-\subsection{Eigenvectors and Eigenvalues}
-\begin{definition}
-    A $\bold{homogeneous ~linear ~ system}$ is one where $\bold{Ax} = \bold{0}$.
-\end{definition}
 
-\noindent{}The trivial solution is when $\bold{x} = \bold{0}$. Non-trivial solutions exist iff $\det(\bold{A}) = 0$.
+\include{tex/linalg/linalg}
 
-\begin{theorem}
-    Let $\bold{A}$ be a square matrix. $$\bold{A\overrightarrow{\bold{v}}} = \lambda \overrightarrow{\bold{v}}$$
-    if and only if $\overrightarrow{\bold{v}}$ is an eigenvector and $\lambda$ is an eigenvalue.
-\end{theorem}
 
-We notice that 
-\begin{align*}
-    \bold{A}\overrightarrow{\bold{v}} = \lambda\overrightarrow{\bold{v}} &\implies \bold{A}\overrightarrow{\bold{v}} = \lambda \bold{I} \overrightarrow{\bold{v}} \\
-    &\implies \overrightarrow{\bold{v}} \left(\bold{A} - \lambda \bold{I} \right) = \bold{0} \\
-    &\implies \det \left(\bold{A} - \lambda \bold{I} \right) = 0.
-\end{align*}
 
-The result above is known as the \alert{characteristeric equation}.
 
-\begin{example}
-    Let $$\bold{A} = \begin{bmatrix} 0 & 1 \\ -4 & 0 \end{bmatrix},$$
-    find the eigenvalues and eigenvectors of $\bold{A}$.
-\end{example}
-
-\noindent{}We first notice that $\det \left(\bold{A} - \lambda \bold{I}\right) = 0$. Meaning that
-$$\det \left(\begin{bmatrix} -\lambda & 1 \\ -4 & -\lambda \end{bmatrix}\right) = 0,$$
-implying that $\lambda^2+4 = 0$. Thus, $\lambda = \pm 2i$. For $\lambda_1 = 2i$, we have
-$$\begin{bmatrix} -2i & 1 \\ -4 & -2i \end{bmatrix} \overrightarrow{\bold{v}} = \bold{0}.$$
-By gaussian elimination we arrive at the first eigenvector $$\overrightarrow{\bold{v}_1} = \begin{pmatrix} 1 \\ 2i \end{pmatrix}.$$ Similarly $$\overrightarrow{\bold{v}_2} = \begin{pmatrix} 1 \\ -2i \end{pmatrix}$$ for $\lambda_2 = -2i$.
-
-\newpage
-\subsection{Diagonalization}
-For $\bold{y} = \bold{A} \bold{x}$, assume $\bold{A}$ has
-a basis of eigenvectors $\bold{x}_1,\bold{x}_2, \dots, 
-\bold{x}_n$, with corresponding eigenvalues $\lambda_1, \lambda_2, \dots, \lambda_n$, and let
-the matrix $$\bold{P} = \begin{pmatrix} \bold{x}_1 & \bold{x}_2 & \cdots & \bold{x}_n \end{pmatrix}$$ be a transformation matix.
-Let $$\bold{y} = \bold{P} \bold{y}' ~ \text{and} ~ \bold{x} = \bold{P} \bold{x}'.$$
-We can then write a new linear system relating $\bold{y}'$ and $\bold{x}'$, giving
-\begin{align*}
-    \bold{P}\bold{y}' = \bold{A}\bold{P} \bold{x}' &\implies \bold{P^{-1}}\bold{P}\bold{y}' = \bold{P^{-1}}\bold{A}\bold{P}\bold{P^{-1}}\bold{P}\bold{x}' \\
-&\implies \bold{y}' = \left ( \bold{P^{-1}}\bold{A}\bold{P} \right) \bold{x}',
-\end{align*}
-where $ \bold{D} = \left ( \bold{P^{-1}}\bold{A}\bold{P} \right) $ is a diagonal matrix such that the diagonals turn out to be the eigenvalues of $\bold{A}$.
-
-\begin{remark}
-    In order to find the diagonalization matrix, begin by finding the eigenvalues and eigenvectors of $\bold{A}$. Then find $\bold{P}$ from the eigenvetors. The diagonlization matrix follows.
-\end{remark}
-
-\begin{example}
-    Diagonalize $$\begin{bmatrix} 7/4 & -\sqrt{3}/4 \\ -\sqrt{3}/4 & 5/4 \end{bmatrix}.$$
-\end{example}
-
-\subsection{Rotating Conics}
+\section{Rotating Conics}
 Let $Q$ be a quadratic form such that $$Q = ax_{1}^2+(b+c)x_1x_2+dx_2^2.$$
 We can express this as $$Q = \bold{x}^T \bold{A}\bold{x} = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} a & b \\ c & d \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2 \end{bmatrix},$$ where $$\bold{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}.$$
