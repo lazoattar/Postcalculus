@@ -52,3 +52,27 @@ where $ \bold{D} = \left ( \bold{P^{-1}}\bold{A}\bold{P} \right) $ is a diagonal
     Diagonalize $$\begin{bmatrix} 7/4 & -\sqrt{3}/4 \\ -\sqrt{3}/4 & 5/4 \end{bmatrix}.$$
 \end{example}
 
+\section{Rotating Conics}
+Let $Q$ be a quadratic form such that $$Q = ax_{1}^2+(b+c)x_1x_2+dx_2^2.$$
+We can express this as $$Q = \bold{x}^T \bold{A}\bold{x} = \begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} a & b \\ c & d \end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \end{bmatrix},$$ where $$\bold{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}.$$
+We can convert the quadratic form to the canonical form by using the diagonalized matrix of $\bold{A}$:
+$$C = \begin{bmatrix} x_1' & x_2' \end{bmatrix} \bold{D}
+\begin{bmatrix} x_1' \\ x_2' \end{bmatrix}.$$ Additionally, note that the transformation matrix is the
+rotation matrix, meaning that
+$$\bold{P} = \begin{bmatrix} \cos x & -\sin x \\ \sin x & \cos x\end{bmatrix}.$$
+
+\begin{theorem}
+Let $Q_n$ be a quadratic form with $n$ dimensions and $C_n$ the corresponding canonical form. Then, for an $n \times n$ matrix $\bold{A}$ and its diagonalized matrix $\bold{D}$,
+    \begin{align*}
+        Q_n &= \begin{bmatrix} x_1 & x_2 & \cdots & x_n \end{bmatrix} \bold{A} \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{bmatrix}, \\
+    C_n &= \begin{bmatrix} x_1' & x_2' & \cdots & x_n' \end{bmatrix} \bold{D} \begin{bmatrix} x_1' \\ x_2' \\ \vdots \\ x_n'\end{bmatrix}.
+    \end{align*}
+\end{theorem}
+If any linear terms are present, they can be expressed as the product of the coefficient matrix and the
+matrix with each variable. So, $$a_1x_1+a_2x_2+\cdots+a_nx_n = \begin{bmatrix}a_1 & a_2 & \cdots & a_n \end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}.$$
+
+\begin{exercise}
+
+\end{exercise}
