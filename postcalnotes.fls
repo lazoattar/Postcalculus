@@ -318,6 +318,8 @@ INPUT tex/linalg/linalg.aux
 INPUT tex/linalg/linalg.aux
 INPUT tex/3Doptim/3Doptim.aux
 INPUT tex/3Doptim/3Doptim.aux
+INPUT tex/diffeq/diffeq.aux
+INPUT tex/diffeq/diffeq.aux
 OUTPUT postcalnotes.aux
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -421,11 +423,16 @@ OUTPUT tex/3Doptim/3Doptim.aux
 INPUT tex/3Doptim/3Doptim.tex
 INPUT tex/3Doptim/3Doptim.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+OUTPUT tex/diffeq/diffeq.aux
+INPUT tex/diffeq/diffeq.tex
+INPUT tex/diffeq/diffeq.tex
 INPUT postcalnotes.aux
 INPUT tex/linalg/linalg.aux
 INPUT tex/linalg/linalg.aux
 INPUT tex/3Doptim/3Doptim.aux
 INPUT tex/3Doptim/3Doptim.aux
+INPUT tex/diffeq/diffeq.aux
+INPUT tex/diffeq/diffeq.aux
 INPUT ./postcalnotes.out
 INPUT ./postcalnotes.out
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
