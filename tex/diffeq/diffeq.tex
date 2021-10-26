@@ -150,6 +150,76 @@ Functions of the form $y=e^{mx}$ are an "educated guess" for solving ODEs.
     Using separation of variables, we get $g(x) = C$. So, $f'(x) = C$. This is
     the same as $\frac{df}{dx} = C \implies f(x) = C_1x+C_2$. Thus,
     $$\boxed{y_2 = \left(C_1x+C_2\right)e^{-2x}}.$$
+    Adding the two solutions, we obtain
+    \begin{align*}
+        y_h &= y_1 + y_2 = C_0e^{-2x} + C_1 xe^{-2x} +C_2e^{-2x} \\
+        y_h &= Ce^{-2x} + Dxe^{-2x}.
+    \end{align*}
+\end{soln}
+\begin{example}
+    $$y''+y'+(1/4)y=0;~y(0) = 3; ~ y'(0) = -3.5.$$
+\end{example}
+\begin{soln}
+    Let $y=e^{mx}$. This means $y' = me^{mx}$ and $y''=m^2e^{mx}$. Plugging in,
+    we get
+    \begin{align*}
+        4m^2e^{mx} + 4me^{mx} + e^{mx} &= 0 \\
+        e^{mx}(4m^2+4m+1) &=0 \\
+        e^{mx}(2m+1)^2 &=0.
+    \end{align*}
+    Thus, $\boxed{y_1 = C_0e^{-\frac{1}{2}x}}$. We now proceed to use reduction
+    of order. So, $y_2 = f(x) \cdot y_1$. First, we have
+    \begin{align*}
+    y_2' &= f'(x)y_1+f(x)y_1' = f'(x)e^{-x/2}-\frac{1}{2}f(x)e^{-x/2}\\
+    y_2'' &= f''(x)y_1+2f'(x)y_1'+f(x)y_1'' = f''(x)e^{-x/2}-f'(x)e^{-x/2}+\frac{1}{4}f(x)e^{-x/2}.
+    \end{align*}
+    Plugging this into the original differential equation, we get
+    \begin{align*}
+        f''(x)e^{-x/2}-f'(x)e^{-x/2}+\frac{1}{4}f(x)e^{-x/2} + 
+        f'(x)e^{-x/2}-\frac{1}{2}f(x)e^{-x/2} +\frac{1}{4}f(x)e^{-x/2}= 0 \\
+        f''(x) = 0.
+    \end{align*}
+    Now, let $g(x) = f'(x)$. This means that $g'(x) = f''(x)$. So, $g'(x) =0$.
+    This means $g(x) = C$. So, $f'(x) =C$. Thus, $f(x) = C_1x+C_2$. THerefore,
+    $$y_2 = (C_1x+C_2)e^{-x/2}.$$
+    Adding the two solutions, we obtain 
+    \begin{align*}
+        y_h &= y_1 + y_2 = C_0e^{-x/2} + C_1xe^{-x/2} + C_2e^{-x/2} \\
+            &= Ce^{-x/2}+Dxe^{-x/2}.
+    \end{align*}
+    Using the inital values, we obtain
+    $$y_h = 3e^{-x/2}-2xe^{-x/2}.$$
+\end{soln}
+In general $y_2 = xy_1$.
+
+\begin{example}
+    $$y'''+3y''-4y = 0.$$
+\end{example}
+\begin{soln}
+    Let $y=e^{mx}$. This mean $y' = me^{mx}$ and $y'' = m^2e^{mx}$. Plugging
+    in, we get 
+    \begin{align*}
+        m^3e^{mx} + 3m^2e^{mx} -4e^{mx} &= 0 \\
+        e^{mx}\left(m^3+3m^2-4\right) &= 0\\
+        e^{mx}(m-1)(m^2+4m+4) &= 0\\
+        e^{mx}(m-1)(m+2)^2 &= 0.
+    \end{align*}
+    Therefore, $y_1 = C_1e^x$, $y_2 = C_2e^{-2x}$, and $y_3 = C_3xe^{-2x}$.
+    Thus, $$\boxed{y_h = c_1e^{x} + C_2e^{-2x} + C_3xe^{-2x}}.$$
+\end{soln}
+
+\begin{example}[Complex Roots]
+   $$ y''+4y = 0.$$
+\end{example}
+\begin{soln}
+    Let $y=e^{mx}$. This means that $y'' = m^2e^{mx}$. Plugging in gives
+    $m= \pm 2i$. Thus, $y_h = C_1e^{2ix} + C_2e^{-2ix}$. Recall 
+    \alert{Euler's Theorem} $$e^{i\theta} = \cos \theta + i\sin \theta.$$
+    Plugging this in gives
+    \begin{align*}
+        y_h &= C_1(\cos 2x + i\sin 2x) + C_2(\cos 2x  -i\sin  2x) \\
+        y_h &= C_1\cos 2x + C_2 i \sin 2x.
+    \end{align*}
 \end{soln}
 
 \section{Problems}
