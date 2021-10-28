@@ -218,21 +218,89 @@ In general $y_2 = xy_1$.
     Plugging this in gives
     \begin{align*}
         y_h &= C_1(\cos 2x + i\sin 2x) + C_2(\cos 2x  -i\sin  2x) \\
-        y_h &= C_1\cos 2x + C_2 i \sin 2x.
+        y_h &= C_1\cos 2x + C_2 \sin 2x.
+    \end{align*}
+\end{soln}
+\begin{example}[Complex Roots]
+$$y''+8y'+25y = 0.$$
+\end{example}
+\begin{soln}
+    Let $y=e^{mx}$. This meas that $y' = me^{mx}$ and $y'' = m^2e^{mx}$.
+    Plugging this in gives $-4\pm 3i$. Thus, 
+    \begin{align*}
+        y_h &= C_1e^{(-4+3i)x} + C_2e^{(-4-3i)x} \\
+        y_h &= e^{-4x}\left(C_1e^{3ix} + C_2e^{-3ix} \right) \\
+        y_h &= e^{-4x}\left(C_1 \cos(3x) + C_2 \sin (3x) \right).
     \end{align*}
 \end{soln}
 
-\section{Problems}
-\begin{problem}
-    Find $y$ for the following differential equation and initial values
-    $$y''+4y'+5y = 0; ~ y(0) = 1; ~ y'(0) = -4.$$
-\end{problem}
-\begin{problem}
-    Find $y$ for the following differential equation and initial values
-    $$y''- 4y'+4y = 0; ~ y(0) = 1; ~ y'(0) = 0.$$
-\end{problem}
-\begin{problem}
-    Find $y$ for the following differential equation and initial values
-    $$y'''-7y'+6y = 0; ~ y(0) = 0; ~ y'(0) = 0; ~ y''(0) = 1.$$
-\end{problem}
+\section{Non Homogeneous ODEs}
+This occurs when $f(x) \neq 0$.
+Our solution will still include the homogeneous potion
+$y = y_h(x) + y_p(x)$. Some methods for solving these are
+\alert{undetermined coefficients}, which can only be used for scalar coefficients,
+and \alert{variation of parameters}, which can be used with scalar or variable 
+coefficients.
+\newpage
+\begin{example}[Undetermined Coefficients]
+    $$y''-4y' + 3y = e^{-x};~y(0) = 1;~y'(0)=0.$$
+\end{example}
+\begin{soln}
+    We first find $y_h$ using $y''-4y'+3y = 0$. Thus we obtain
+    $$y_h = C_1e^x+C_2e^{3x}.$$ Our guess for $y_p = Ce^{-x}$.
+    Thus, $y_p' = -Ce^{-x}$ and $y_p'' = Ce^{-x}$. So, plugging this in,
+    we get 
+    \begin{align*}
+        Ce^{-x}+4Ce^{-x}+3Ce^{-x} = e^{-x} &\implies 8Ce^{-x} = e^{-x} \\
+                                           &\implies C = \frac{1}{8}.
+    \end{align*}
+    Therefore $$y = y_h + y_p = C_1e^{x}+C_2e^{3x} + \frac{1}{8}e^{-x}.$$
+    Using the initial values, we find that
+    $$\boxed{y = \frac{5}{4}e^{x}-\frac{3}{8}e^{3x} + \frac{1}{8}e^{-x}}.$$
+\end{soln}
+The following is a useful guessing guide:
+\begin{align*}
+    r(x) &\implies y_p(x) \\
+    ke^{rx} &\implies Ce^{rx} \\
+    kx^n &\implies P_n = a_nx^n + a_{n-1}x^{n-1} + \cdots a_0 \\
+    k\cos(wx)~\text{or}~k\sin(wx) &\implies a\cos(wx)+b\sin(wx).
+\end{align*}
+\begin{example}[Guessing Practice with Undetermined Coefficients]
+   $$ y''+2y'+y = \cos(2x)$$
+\end{example}
+\begin{soln}
+    We first proceed to find $y_h$. We find that
+    $$y_h = C_1e^{-x}+C_2xe^{-x}.$$
+    We make the following guess: $y_p = a\cos(2x) + b\sin(2x)$. Solving
+    for $a$ and $b$, we find that $y_p = -\frac{3}{25}\cos(2x) + \frac{4}{25}\sin(2x)$.
+    Therefore 
+    $$\boxed{y = C_1e^{-x}+C_2xe^{-x} - \frac{3}{25}\cos(2x)+\frac{4}{25}\sin(2x)}.$$
+\end{soln}
+\begin{example}[Bad Guessing]
+    $$y''+4y'+3y = e^{-x}.$$
+\end{example}
+\begin{soln}
+    We notice $y_h = C_1e^{-x} + C_2e^{-3x}$. $y_p = Ce^{-x}$ is a bad guess since it is a term present in the
+    homogeneous equation. So, we let $y_p = Cxe^{-x}$, which is a guess from
+    the result of applying the reduction of order. Solving for $C$, we get
+    that $C = \frac{1}{2}$. Therefore 
+    $$\boxed{y = C_1e^{-x}+C_2e^{-3x}+\frac{1}{2}xe^{-x}}.$$
+\end{soln}
 
+
+
+
+
+%\section{Problems}
+%\begin{problem}
+%    Find $y$ for the following differential equation and initial values
+%    $$y''+4y'+5y = 0; ~ y(0) = 1; ~ y'(0) = -4.$$
+%\end{problem}
+%\begin{problem}
+%    Find $y$ for the following differential equation and initial values
+%    $$y''- 4y'+4y = 0; ~ y(0) = 1; ~ y'(0) = 0.$$
+%\end{problem}
+%\begin{problem}
+%    Find $y$ for the following differential equation and initial values
+%    $$y'''-7y'+6y = 0; ~ y(0) = 0; ~ y'(0) = 0; ~ y''(0) = 1.$$
+%\end{problem}
