@@ -287,8 +287,29 @@ The following is a useful guessing guide:
     $$\boxed{y = C_1e^{-x}+C_2e^{-3x}+\frac{1}{2}xe^{-x}}.$$
 \end{soln}
 
-
-
+\begin{definition}
+    \alert{Variation of Parameter} involve differential equations
+    of variable coefficients. For $a_2y''+a_1y'+a_0y=f(x)$. First,
+    we make the leading coefficient $1$ by dividing by $a_2$. Thus,
+    $$y'' + p(x)y' + q(x)y = r(x).$$ We still do the homogeneous
+    portion first: $y_h = C_1y_1+C_2y_2$. Then $y_p = u(x)y_1(x)+v(x)y_2(x)$,
+    where $u' = -ry_2/w$ and $v'=ry_1/w$, where 
+    $$w = \det \left( \begin{bmatrix} y_1 & y_2 \\ y_1' & y_2' \end{bmatrix}\right).$$
+    This matrix is called the \alert{Wronskian}.
+\end{definition}
+\begin{example}[Variation of parameters]
+    $$y''+4y'+4y = e^{-2x}/x^2.$$
+\end{example}
+\begin{soln}
+    We find that $y_h = C_1e^{-2x} + C_2xe^{-2x}$. Notice that the Wronskian
+    is $$w =\det \left( \begin{bmatrix} e^{-2x} & xe^{-2x} \\ -2e^{-2x} & e^{-2x}-2xe^{-2x}
+    \end{bmatrix}\right) = e^{-4x}.$$ Thus,
+    \begin{align*}
+        u'(x) &= -\frac{1}{x} \\
+        v'(x) = \frac{1}{x^2}.
+    \end{align*}
+    Thus, $u(x)=-\ln|x|+C$ and $v(x) = -\frac{1}{x} +C$.
+\end{soln}
 
 
 %\section{Problems}
