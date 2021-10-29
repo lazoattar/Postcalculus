@@ -295,7 +295,7 @@ The following is a useful guessing guide:
     portion first: $y_h = C_1y_1+C_2y_2$. Then $y_p = u(x)y_1(x)+v(x)y_2(x)$,
     where $u' = -ry_2/w$ and $v'=ry_1/w$, where 
     $$w = \det \left( \begin{bmatrix} y_1 & y_2 \\ y_1' & y_2' \end{bmatrix}\right).$$
-    This matrix is called the \alert{Wronskian}.
+    This determinant is called the \alert{Wronskian}.
 \end{definition}
 \begin{example}[Variation of parameters]
     $$y''+4y'+4y = e^{-2x}/x^2.$$
@@ -306,11 +306,25 @@ The following is a useful guessing guide:
     \end{bmatrix}\right) = e^{-4x}.$$ Thus,
     \begin{align*}
         u'(x) &= -\frac{1}{x} \\
-        v'(x) = \frac{1}{x^2}.
+        v'(x) &= \frac{1}{x^2}.
     \end{align*}
-    Thus, $u(x)=-\ln|x|+C$ and $v(x) = -\frac{1}{x} +C$.
+    Thus, $u(x)=-\ln|x|$ and $v(x) = -\frac{1}{x}$. Therefore,
+    $$y_p = \ln |x|e^{2x} - e^{-2x} \implies \boxed{y=C_1e^{-2x}+C_2xe^{-2x}+\ln|x|e^{2x}}.$$
 \end{soln}
-
+\begin{example}[Undetermined Coefficients]
+    $$y''+y'+y = 3x^2+4.$$
+\end{example}
+\begin{soln}
+    We first find that $$y_h = e^{(-1/2)x}\left( C_1\cos(\sqrt{3}x/2)+C_2\sin(\sqrt{3}x/2)\right).$$
+    Then we let $y_p = D_1x^2+D_2x+D_3$. Therefore
+    \begin{align*}
+        2D_1+2xD_1+D_2+D_1x^2+D_2x+D_3 = 3x^2+4 \\
+        x^2\left(D_1\right)+x\left(2D_1+D_2\right)+\left(2D_1+D_2+D_3\right)=3x^2+4.
+    \end{align*}
+    Solving the resulting system yields $D_1 = 3, D_2 = -6, D_3 = 4$.
+    Therefore $$y_p = 3x^2-6x+4.$$ So,
+    $$\boxed{y = e^{(-1/2)x}\left( C_1\cos(\sqrt{3}x/2)+C_2\sin(\sqrt{3}x/2)\right)+3x^2-6x+4}.$$
+\end{soln}
 
 %\section{Problems}
 %\begin{problem}
