@@ -326,6 +326,18 @@ The following is a useful guessing guide:
     $$\boxed{y = e^{(-1/2)x}\left( C_1\cos(\sqrt{3}x/2)+C_2\sin(\sqrt{3}x/2)\right)+3x^2-6x+4}.$$
 \end{soln}
 
+\begin{example}[Variation of parameters]
+    $$y''+4y = \tan x.$$
+\end{example}
+\begin{soln}
+    We first find $y_h = C_1\cos(2x)+C_2\sin(2x)$. Now, we notice that
+    wronskian is 
+    $$w = \det \left( \begin{bmatrix}\cos(2x)&\sin(2x) \\ -2\sin(2x) & 2\cos(2x) \end{bmatrix}\right)
+    =2.$$ Thus, $$u'(x) = -\frac{\tan x \sin (2x)}{2} = -\sin^2(x)$$
+    and $$v'(x) = \frac{1}{2}\ln |\cos x| - \frac{\cos(2x)}{4} = \frac{\sin(2x)}{2}-\frac{1}{2}\tan x.$$
+    Solving, we find $u(x) = \frac{\sin(2x)}{4} - \frac{1}{2}x$.
+\end{soln}
+
 %\section{Problems}
 %\begin{problem}
 %    Find $y$ for the following differential equation and initial values
