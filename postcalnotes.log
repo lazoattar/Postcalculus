@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  29 OCT 2021 11:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  31 OCT 2021 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,17 +903,21 @@ Package thmtools Info: Key `mdframed' (with value `style=mdbluebox')
 Package thmtools Info: Key `mdframed' (with value `style=mdredbox')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmredbox' on input line 393.
+(thmtools)             that uses `style=thmredbox' on input line 394.
+Package thmtools Info: Key `mdframed' (with value `style=mdpurplebox')
+(thmtools)             is not a known style key.
+(thmtools)             Will pass this to every \declaretheorem
+(thmtools)             that uses `style=thmpurplebox' on input line 412.
 Package thmtools Info: Key `mdframed' (with value `style=mdgreenbox')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmgreenbox' on input line 411.
+(thmtools)             that uses `style=thmgreenbox' on input line 432.
 Package thmtools Info: Key `mdframed' (with value `style=mdblackbox')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=thmblackbox' on input line 428.
+(thmtools)             that uses `style=thmblackbox' on input line 449.
 Package thmtools Info: Automatically pulling in `thmdef-mdframed' on input line
- 438.
+ 459.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/thmtools/thmdef-mdframed.sty
 Package: thmdef-mdframed 2019/12/22 v68
@@ -921,7 +925,7 @@ Package: thmdef-mdframed 2019/12/22 v68
 \c@theorem=\count302
 Package scrkbase Info: You've told me to extend the font selection of the
 (scrkbase)             element `partprefix' that is an alias of element
-(scrkbase)             `partnumber' on input line 531.
+(scrkbase)             `partnumber' on input line 570.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count303
@@ -1095,7 +1099,8 @@ Package scrlayer-scrpage Info: deactivating warning for font element
 Package scrlayer-scrpage Info: auto-selection of `pagestyleset=KOMA-Script'.
 
 1: section
-) (./tex/Qcircuit.tex
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/commath/commath.sty)
+(./tex/Qcircuit.tex
 (/usr/local/texlive/2020/texmf-dist/tex/generic/xypic/xy.sty
 (/usr/local/texlive/2020/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing:
 catcodes, docmode,
@@ -1195,25 +1200,25 @@ elliptical arcs, loaded)) (./postcalnotes.aux (./tex/linalg/linalg.aux)
 (./tex/3Doptim/3Doptim.aux) (./tex/diffeq/diffeq.aux))
 \openout1 = `postcalnotes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-Package scrbase Info: activating english \contentsname on input line 10.
-Package scrbase Info: activating english \listfigurename on input line 10.
-Package scrbase Info: activating english \listtablename on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+Package scrbase Info: activating english \contentsname on input line 11.
+Package scrbase Info: activating english \listfigurename on input line 11.
+Package scrbase Info: activating english \listtablename on input line 11.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1238,7 +1243,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box78
-Package hyperref Info: Link coloring ON on input line 10.
+Package hyperref Info: Link coloring ON on input line 11.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1252,9 +1257,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count347
 )
-LaTeX Info: Redefining \ref on input line 10.
-LaTeX Info: Redefining \pageref on input line 10.
-LaTeX Info: Redefining \nameref on input line 10.
+LaTeX Info: Redefining \ref on input line 11.
+LaTeX Info: Redefining \pageref on input line 11.
+LaTeX Info: Redefining \nameref on input line 11.
  (./postcalnotes.out) (./postcalnotes.out)
 \@outlinefile=\write7
 \openout7 = `postcalnotes.out'.
@@ -1266,7 +1271,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 10.
+(scrbook)           before \begin{document} on input line 11.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
@@ -1280,14 +1285,14 @@ e 168.
 ))
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count349
-LaTeX Info: Redefining \microtypecontext on input line 10.
+LaTeX Info: Redefining \microtypecontext on input line 11.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 10.
+LaTeX Info: Redefining \showhyphens on input line 11.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1296,7 +1301,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1305,7 +1310,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1314,13 +1319,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.43799pt on input line 10.
+Package xypdf Info: Line width: 0.43799pt on input line 11.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1332,13 +1337,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 Package hyperref Warning: Option `colorlinks' has already been used,
-(hyperref)                setting the option has no effect on input line 18.
+(hyperref)                setting the option has no effect on input line 19.
 
 [2
 
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 19
+Package tocbasic Info: character protrusion at toc deactivated on input line 20
 .
  (./postcalnotes.toc)
 \tf@toc=\write8
@@ -1412,6 +1417,10 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 66.
  [6]
+Package mdframed Info: mdframed works in twoside mode on input line 77.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 77.
 Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
 ut line 77.
 ) [7]
@@ -1454,11 +1463,11 @@ Package mdframed Info: mdframed works in twoside mode on input line 120.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 120.
+ [11]
 Package mdframed Info: mdframed works in twoside mode on input line 133.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 133.
- [11]
 Package mdframed Info: mdframed works in twoside mode on input line 149.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1472,11 +1481,11 @@ Package mdframed Info: mdframed works in twoside mode on input line 180.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 180.
+ [13]
 Package mdframed Info: mdframed works in twoside mode on input line 212.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 212.
- [13]
 Package mdframed Info: mdframed works in twoside mode on input line 229.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1490,155 +1499,162 @@ Package mdframed Info: mdframed detected package amsthm
 
  (./tex/diffeq/diffeq.tex
 chapter 3.
-Package mdframed Info: mdframed works in twoside mode on input line 5.
+Package mdframed Info: mdframed works in twoside mode on input line 56.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 5.
-Package mdframed Info: mdframed works in twoside mode on input line 14.
+(mdframed)              on input line 56.
+Package mdframed Info: mdframed works in twoside mode on input line 74.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 14.
-Package mdframed Info: mdframed works in twoside mode on input line 22.
+(mdframed)              on input line 74.
+Package hyperref Info: bookmark level for unknown question defaults to 0 on inp
+ut line 74.
+Package mdframed Info: mdframed works in twoside mode on input line 88.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 22.
-Package mdframed Info: mdframed works in twoside mode on input line 30.
+(mdframed)              on input line 88.
+Package mdframed Info: mdframed works in twoside mode on input line 92.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 30.
+(mdframed)              on input line 92.
+Package mdframed Info: Not enough space on this page on input line 93.
 [15
 
 
 
 
 ]
-Package mdframed Info: mdframed works in twoside mode on input line 38.
+Package mdframed Info: Not enough space on this page on input line 93.
+Package mdframed Info: mdframed works in twoside mode on input line 102.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 38.
-Package mdframed Info: mdframed works in twoside mode on input line 47.
+(mdframed)              on input line 102.
+Package mdframed Info: mdframed works in twoside mode on input line 124.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 47.
-Package mdframed Info: mdframed works in twoside mode on input line 56.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 56.
-Package mdframed Info: mdframed works in twoside mode on input line 65.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 65.
+(mdframed)              on input line 124.
  [16]
-Package mdframed Info: mdframed works in twoside mode on input line 76.
+Package mdframed Info: mdframed works in twoside mode on input line 146.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 76.
-Package mdframed Info: mdframed works in twoside mode on input line 82.
+(mdframed)              on input line 146.
+
+Overfull \hbox (1.13385pt too wide) detected at line 165
+[]
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 177.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 82.
-Package mdframed Info: mdframed works in twoside mode on input line 93.
+(mdframed)              on input line 177.
+[17]
+Package mdframed Info: mdframed works in twoside mode on input line 202.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 93.
-Package mdframed Info: mdframed works in twoside mode on input line 107.
+(mdframed)              on input line 202.
+Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
+put line 202.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
+04.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 204.
+Package mdframed Info: mdframed works in twoside mode on input line 215.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 107.
- [17]
-Package mdframed Info: mdframed works in twoside mode on input line 126.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 126.
-Package mdframed Info: mdframed works in twoside mode on input line 160.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 160.
+(mdframed)              on input line 215.
  [18]
-Package mdframed Info: mdframed works in twoside mode on input line 196.
+Package mdframed Info: mdframed works in twoside mode on input line 251.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 196.
- [19]
-Package mdframed Info: mdframed works in twoside mode on input line 211.
+(mdframed)              on input line 251.
+Package mdframed Info: mdframed works in twoside mode on input line 266.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 211.
-Package mdframed Info: mdframed works in twoside mode on input line 224.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 224.
- [20]
-Package mdframed Info: mdframed works in twoside mode on input line 245.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 245.
-Package mdframed Info: mdframed works in twoside mode on input line 268.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 268.
+(mdframed)              on input line 266.
 Package mdframed Info: mdframed works in twoside mode on input line 279.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 279.
- [21]
+
+[19] [20]
 Package mdframed Info: mdframed works in twoside mode on input line 300.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 300.
-Package mdframed Info: mdframed works in twoside mode on input line 314.
+Package mdframed Info: mdframed works in twoside mode on input line 323.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 314.
+(mdframed)              on input line 323.
+Package mdframed Info: mdframed works in twoside mode on input line 334.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 334.
+ [21]
+Package mdframed Info: mdframed works in twoside mode on input line 344.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 344.
+Package mdframed Info: mdframed works in twoside mode on input line 363.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 363.
  [22]
-Package mdframed Info: mdframed works in twoside mode on input line 329.
+Package mdframed Info: mdframed works in twoside mode on input line 377.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 329.
+(mdframed)              on input line 377.
+Package mdframed Info: mdframed works in twoside mode on input line 392.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 392.
 ) [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 26.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 26.
- (./postcalnotes.aux
-(./tex/linalg/linalg.aux) (./tex/3Doptim/3Doptim.aux) (./tex/diffeq/diffeq.aux)
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 26.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 26.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 27.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 27.
+ (./postcalnotes.aux (./tex/linalg/linalg.aux)
+(./tex/3Doptim/3Doptim.aux) (./tex/diffeq/diffeq.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 27.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 27.
 Package rerunfilecheck Info: File `postcalnotes.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 26.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 27.
  ) 
 Here is how much of TeX's memory you used:
- 33876 strings out of 480608
- 657135 string characters out of 5903631
- 1146165 words of memory out of 5000000
- 48921 multiletter control sequences out of 15000+600000
- 548468 words of font info for 111 fonts, out of 8000000 for 9000
+ 34026 strings out of 480608
+ 659182 string characters out of 5903631
+ 1149910 words of memory out of 5000000
+ 49064 multiletter control sequences out of 15000+600000
+ 548672 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,21n,107p,10130b,1131s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,21n,107p,10130b,1132s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
 usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
-/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
-cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loca
-l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb>
-Output written on postcalnotes.pdf (23 pages, 253786 bytes).
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb>
+Output written on postcalnotes.pdf (23 pages, 275715 bytes).
 PDF statistics:
- 419 PDF objects out of 1000 (max. 8388607)
- 355 compressed objects within 4 object streams
- 148 named destinations out of 1000 (max. 500000)
+ 417 PDF objects out of 1000 (max. 8388607)
+ 351 compressed objects within 4 object streams
+ 140 named destinations out of 1000 (max. 500000)
  19157 words of extra memory for PDF output out of 20736 (max. 10000000)
 

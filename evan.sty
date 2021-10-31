@@ -385,12 +385,33 @@
 			backgroundcolor=Salmon!5,
 			linecolor=RawSienna,
 		}
+		
 		\declaretheoremstyle[
 			headfont=\bfseries\color{RawSienna},
 			mdframed={style=mdredbox},
 			headpunct={\\[3pt]},
 			postheadspace={0pt},
 		]{thmredbox}
+		
+%%%%%		
+		\mdfdefinestyle{mdpurplebox}{%
+			roundcorner = 10pt,
+			linewidth=1pt,
+			skipabove=12pt,
+			innerbottommargin=9pt,
+			skipbelow=2pt,
+			linecolor=ForestGreen,
+			nobreak=true,
+			backgroundcolor=ForestGreen!5,
+		}
+		\declaretheoremstyle[
+			headfont=\sffamily\bfseries\color{ForestGreen!70!black},
+			mdframed={style=mdpurplebox},
+			headpunct={\\[3pt]},
+			postheadspace={0pt}
+		]{thmpurplebox}
+%%%%%		
+
 		\mdfdefinestyle{mdgreenbox}{%
 			skipabove=8pt,
 			linewidth=2pt,
@@ -447,6 +468,9 @@
 			\declaretheorem[style=thmbluebox,name=Lemma,numbered=no]{lemma*}
 			\declaretheorem[style=thmbluebox,name=Proposition,numbered=no]{proposition*}
 			\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary*}
+			%%%
+			\declaretheorem[style=thmpurplebox,name=Method,sibling=theorem]{method}
+			\declaretheorem[style=thmpurplebox,name=Method,numbered=no]{method*}
 		\else
 			\ifevansecthm
 				\declaretheorem[name=Theorem,numberwithin=section]{theorem}
@@ -460,6 +484,9 @@
 			\declaretheorem[name=Lemma,numbered=no]{lemma*}
 			\declaretheorem[name=Proposition,numbered=no]{proposition*}
 			\declaretheorem[name=Corollary,numbered=no]{corollary*}
+			%%%
+			\declaretheorem[name=Method,numbered=no]{method*}
+			
 		\fi
 		\ifevanmdthm
 			\declaretheorem[style=thmgreenbox,name=Algorithm,sibling=theorem]{algorithm}
@@ -484,16 +511,28 @@
 		\ifevanmdthm
 			\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
 			\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
+			
+			\declaretheorem[style=thmblackbox,name=Exercise,sibling=theorem]{exercise}
+			\declaretheorem[style=thmblackbox,name=Exercise,numbered=no]{exercise*}
+			
+			\declaretheorem[style=thmblackbox,name=Question,sibling=theorem]{question}
+			\declaretheorem[style=thmblackbox,name=Question,numbered=no]{question*}
 		\else
 			\declaretheorem[name=Remark,sibling=theorem]{remark}
 			\declaretheorem[name=Remark,numbered=no]{remark*}
+			
+			\declaretheorem[name=Exercise,sibling=theorem]{exercise}
+			\declaretheorem[name=Exercise,numbered=no]{exercise*}
+			
+			\declaretheorem[name=Question,sibling=theorem]{question}
+			\declaretheorem[name=Question,numbered=no]{question*}
 		\fi
 		\declaretheorem[name=Conjecture,sibling=theorem]{conjecture}
 		\declaretheorem[name=Conjecture,numbered=no]{conjecture*}
 		\declaretheorem[name=Definition,sibling=theorem]{definition}
 		\declaretheorem[name=Definition,numbered=no]{definition*}
-		\declaretheorem[name=Exercise,sibling=theorem]{exercise}
-		\declaretheorem[name=Exercise,numbered=no]{exercise*}
+		%\declaretheorem[name=Exercise,sibling=theorem]{exercise}
+		%\declaretheorem[name=Exercise,numbered=no]{exercise*}
 		\declaretheorem[name=Fact,sibling=theorem]{fact}
 		\declaretheorem[name=Fact,numbered=no]{fact*}
 		\declaretheorem[name=Problem,sibling=theorem]{problem}
@@ -632,7 +671,7 @@
 			\automark{section}
 			\chead{}
 			\ohead{\footnotesize\textbf{\thetitle}}
-			\cfoot{\pagemark}
+			%\cfoot{\pagemark}
 		}
 	\fi
 	%%fakesection Chinese support

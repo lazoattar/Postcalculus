@@ -1,132 +1,150 @@
 \chapter{Ordinary Differential Equations}
 \section{Separable Differential Equations}
 
-\begin{example}
-    Find $y$ for the following differential equation:
-    $$\frac{dy}{dx} = x.$$
-\end{example}
-\begin{soln}
-    We see that $dy = x ~ dx$. Taking the integral of both sides, we obtain
-    $$y = \frac{1}{2} x^2 + C.$$
-\end{soln}
+A separable differential equation can be simplified to the form:
+$$g(y)y'=f(x) \implies g(y)\dif y = f(x) \dif x,$$
+where $f$ and $g$ are functions of $x$ and $y$ respectively. Letting
+$G'(y)=g(y)$ and $F'(x)=f(x)$ and taking the integral of both sides of the
+differential equation, we get $$G(y) = F(x)+C$$ for some constant $C$. Using
+a separation of variables is most helpful as a first try when attempting
+first-order linear ordinary differential equations. We go more in detail later
+in the chapter.
 
-\begin{example}
-    Find $y$ for the following differential equation:
-    $$\frac{dy}{dx} = \frac{1}{x}.$$
-\end{example}
-\begin{soln}
-    We see that $dy = \frac{1}{x} ~ dx$. Taking the integral of both sides,
-    we obtain $$y = \ln|x| + C.$$
-\end{soln}
-\begin{example}
-    Find $y$ for the following differential equation:
-    $$\frac{dy}{dx} = \cos x.$$
-\end{example}
-\begin{soln}
-    We see that $dy = \cos x ~ dx$. Taking the integral of both sides, we obtain
-    $$\boxed{y = \sin x + C}.$$
-\end{soln}
-\begin{example}
-    Find $y$ for the following differential equation:
-    $$\frac{dy}{dx} = e^x.$$
-\end{example}
-\begin{soln}
-    We see that $dy = e^x ~ dx$. Taking the integral of borth sides, we obtain
-    $$\boxed{y =  e^x + C}.$$
-\end{soln}
-\begin{example}
-    Find $y$ for the following differential equation: 
-    $$\frac{dy}{dx} = xy.$$
-\end{example}
-\begin{soln}
-    We see that $\frac{1}{y} ~ dy  = x ~ dx$. Taking the integral of
-    both sides, we get
-    $$\ln |y| = \frac{1}{2}x^2 + C \implies y = e^{\frac{1}{2}x^2+C}.$$
-\end{soln}
+%\begin{example}
+%    Find $y$ for the following differential equation:
+%    $$\frac{dy}{dx} = x.$$
+%\end{example}
+%\begin{soln}
+%    We see that $dy = x ~ dx$. Taking the integral of both sides, we obtain
+%    $$y = \frac{1}{2} x^2 + C.$$
+%\end{soln}
+%
+%\begin{example}
+%    Find $y$ for the following differential equation:
+%    $$\frac{dy}{dx} = \frac{1}{x}.$$
+%\end{example}
+%\begin{soln}
+%    We see that $dy = \frac{1}{x} ~ dx$. Taking the integral of both sides,
+%    we obtain $$y = \ln|x| + C.$$
+%\end{soln}
+%\begin{example}
+%    Find $y$ for the following differential equation:
+%    $$\frac{dy}{dx} = \cos x.$$
+%\end{example}
+%\begin{soln}
+%    We see that $dy = \cos x ~ dx$. Taking the integral of both sides, we obtain
+%    $$\boxed{y = \sin x + C}.$$
+%\end{soln}
+%\begin{example}
+%    Find $y$ for the following differential equation:
+%    $$\frac{dy}{dx} = e^x.$$
+%\end{example}
+%\begin{soln}
+%    We see that $dy = e^x ~ dx$. Taking the integral of borth sides, we obtain
+%    $$\boxed{y =  e^x + C}.$$
+%\end{soln}
+%\begin{example}
+%    Find $y$ for the following differential equation: 
+%    $$\frac{dy}{dx} = xy.$$
+%\end{example}
+%\begin{soln}
+%    We see that $\frac{1}{y} ~ dy  = x ~ dx$. Taking the integral of
+%    both sides, we get
+%    $$\ln |y| = \frac{1}{2}x^2 + C \implies y = e^{\frac{1}{2}x^2+C}.$$
+%\end{soln}
 \begin{example}
     Find $y$ for the following differential equation:
     $$\frac{dy}{dx} = x^2y-2xy.$$
 \end{example}
 \begin{soln}
-    We see that $dy = xy(x-2) ~ dx \implies \frac{1}{y} ~dy= x^2-2x ~ dx$.
+    Separating the variables, we see that $\frac{1}{y} \dif y = (x^2-2x) \dif x$.
     Taking the integral of both sides we get that
-    $$\ln |y| = \frac{1}{3}x^3-x^2 + C \implies y = e^{\frac{1}{3}x^3-x^2 + C}.$$
+    $$\ln |y| = \frac{1}{3}x^3-x^2 + C \implies y = Ce^{\frac{1}{3}x^3-x^2}.$$
 \end{soln}
-\begin{example}
-    Find $y$ for the following differential equation:
-    $$(x^2+x)~\frac{dy}{dx} = y-1.$$
-\end{example}
-\begin{soln}
-    We see that $\frac{1}{y-1} ~ dy = \frac{1}{x^2+x} ~ dx$. Taking the
-    integral of both sides, we find that
-    $$\ln|y-1| = \ln|x|-\ln|x+1| +C\implies y = C\left|\frac{x}{x+1}\right|+1.$$
-\end{soln}
-\begin{example}
-    Find $y$ for the following differential equation:
-    $$\frac{dy}{dx} = x^2y-2xy,$$
-    where $y(0) = e$.
-\end{example}
-\begin{soln}
-    By a previous example we have $$y = C\left(e^{\frac{1}{3}x^3-x^2}\right).$$
-    By the initial value, we solve for $C$ to get $C = e$. Therefore,
-    $$\boxed{y = e^{\frac{1}{3}x^3-x^2+1}}.$$
-\end{soln}
+%\begin{example}
+%    Find $y$ for the following differential equation:
+%    $$(x^2+x)~\frac{dy}{dx} = y-1.$$
+%\end{example}
+%\begin{soln}
+%    We see that $\frac{1}{y-1} ~ dy = \frac{1}{x^2+x} ~ dx$. Taking the
+%    integral of both sides, we find that
+%    $$\ln|y-1| = \ln|x|-\ln|x+1| +C\implies y = C\left|\frac{x}{x+1}\right|+1.$$
+%\end{soln}
+\begin{question}
+    What is $y$ when given the initial condition $y(0)=e$?
+\end{question}
+%\begin{soln}
+%    By a previous example we have $$y = C\left(e^{\frac{1}{3}x^3-x^2}\right).$$
+%    By the initial value, we solve for $C$ to get $C = e$. Therefore,
+%    $$\boxed{y = e^{\frac{1}{3}x^3-x^2+1}}.$$
+%\end{soln}
 
-\section{ODEs and PDEs}
+\section{Homogeneous Ordinary Differential Equations}
+The general from of a linear ordinary differential equation(ODE) is
+$$a_ny^{(n)} +a_{n-1}y^{(n-1)}+\cdots+a_1y'+a_0y = f(x),$$
+where $a_i \in \RR[x]$ for $i \in \{0, 1, \dots, n\}$ and $y^{(j)}$ denotes
+the $j$th derivative of $y$. It is then said that this ODE
+has \alert{order} $n$ since it is the highest derivative in the equation.
 \begin{example}[ODE]
     $$\frac{d^2f}{dx^2} + 3 \frac{df}{dx} + 5 = 0  \implies y''+3y'+5=0.$$
 \end{example}
-The general from of a linear ODE is
-$$a_ny^{(n)} +a_{n-1}y^{(n-1)}+\cdots+a_1y'+a_0y = f(x),$$
-where $a_i \in \RR$ such that $i \in \{0, 1, \dots, n\}$.
-\begin{example}[PDE]
-    $$\frac{\partial^2f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = 0.$$
-\end{example}
-The order of a differential equation is the highest derivative in the equation.
-
-For first order ODEs, we try separation of variables first.
+\begin{remark}
+    Partial differential equations also exist.
+\end{remark}
+%\begin{example}[PDE]
+%    $$\frac{\partial^2f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = 0.$$
+%\end{example}
 
 \begin{definition}
     A \alert{homogeneous} ordinary differential equation is one with $f(x) = 0$ 
-    with constant coefficients.
+    and has constant coefficients.
 \end{definition}
 \begin{example}[Homogeneous ODE]
-    $$y''+7y'+12y=0.$$
-\end{example}
-Functions of the form $y=e^{mx}$ are an "educated guess" for solving ODEs.
-\begin{soln}
-    Let $y=e^{mx}$. This implies $y'=me^{mx}$ and $y'' = m^2e^{mx}$.
-    Plugging in, we get
+    Consider the differential equation $$y''+7y'+12y=0.$$ Functions of the
+    form $y=e^{mx}$ are an educated guess for solving homoegeneous ODEs. So,
+    letting $y=e^{mx}$ means $y' = me^{mx}$ and $y''= m^2e^{mx}$. Plugging
+    these in our differential equation,
     \begin{align*}
         m^2e^{mx}+7me^{mx}+12e^{mx}&=0 \\
         e^{mx}\left(m^2+7m+12\right)&=0 \\
         e^{mx}(m+4)(m+3) &= 0.
     \end{align*}
-    Thus we have $y_h = C_1e^{-4x}+C_2e^{-3x}$.
-\end{soln}
-\begin{example}[Homogeneous ODE with initial values] 
-    $$y''+y;-2y=0, y(0) = 4, y'(0)=-5.$$
+    Therefore, $m=-4,-3$, implying that $y_1=C_1e^{-4x}$ and $y_2=C_2e^{-3x}$. 
+    This means that our solution of the differential
+    equation is $$y_h = y_1+y_2 =  C_1e^{-4x} + C_2e^{-3x}.$$
 \end{example}
-\begin{soln}
-    Let $y=e^{mx}$. This means $y'=me^{mx}$ and $y''=m^2e^{mx}$. Plugging in,
-    we get
-    \begin{align*}
-        m^2e^{mx}+me^{mx}-2e^{mx} &= 0\\
-        e^{mx} \left(m^2+m-2\right) &= 0 \\
-        e^{mx}(m-1)(m+2) &=0.
-    \end{align*}
-    So, $m=-2,1$. Therefore $y_h = C_1e^{-2x} + C_2e^{x}$. Then, we get the 
-    following system from the initial values:
-    \begin{align*}
-         C_1+C_2 &= 4 \\
-         -2C_1+C_2&=-5.
-    \end{align*}
-    Solving, we get $C_1 = 3$ and $C_2 = 1$. So, $\boxed{y_h = 3e^{-2x}+e^{x}}$.
-\end{soln}
+At first, it might be puzzling why we consider $y=e^{mx}$ to be an educated
+guess for solving homogeneous ODEs with constant coeficients. However, let us
+consider the following first-order differential equation 
+$$y'+ky=0 \implies y' = -ky.$$ Here, it is natural to guess that $y=e^{mx}$
+because $e^{mx}$ is the only function where its derivative is equal to some
+scalar multiple of itsself. So, for other homogeneous ODEs with constant
+coefficient and of higher degree, we also use the guess as a means
+of finding the general solution.
+\begin{exercise}[Homogeneous ODE with initial values]
+    $$y''+y'-2y=0,~y(0) = 4,~y'(0)=-5.$$
+\end{exercise}
+%\begin{soln}
+%    Let $y=e^{mx}$. This means $y'=me^{mx}$ and $y''=m^2e^{mx}$. Plugging in,
+%    we get
+%    \begin{align*}
+%        m^2e^{mx}+me^{mx}-2e^{mx} &= 0\\
+%        e^{mx} \left(m^2+m-2\right) &= 0 \\
+%        e^{mx}(m-1)(m+2) &=0.
+%    \end{align*}
+%    So, $m=-2,1$. Therefore $y_h = C_1e^{-2x} + C_2e^{x}$. Then, we get the 
+%    following system from the initial values:
+%    \begin{align*}
+%         C_1+C_2 &= 4 \\
+%         -2C_1+C_2&=-5.
+%    \end{align*}
+%    Solving, we get $C_1 = 3$ and $C_2 = 1$. So, $\boxed{y_h = 3e^{-2x}+e^{x}}$.
+%\end{soln}
+Now, we consider what happens if we get a polynomial with repeated roots or
+if we are already given a solution to the differential equation.
+\newpage
 \begin{example}[Homogeneous ODE with repeated roots]
     $$y''+4y'+4y=0.$$
-\end{example}
-\begin{soln}
     Let $y=e^{mx}$. This means $y'=me^{mx}$ and $y''=m^2e^{mx}$. PLugging in, 
     we get
     \begin{align*}
@@ -155,7 +173,44 @@ Functions of the form $y=e^{mx}$ are an "educated guess" for solving ODEs.
         y_h &= y_1 + y_2 = C_0e^{-2x} + C_1 xe^{-2x} +C_2e^{-2x} \\
         y_h &= Ce^{-2x} + Dxe^{-2x}.
     \end{align*}
-\end{soln}
+\end{example}
+\begin{theorem}[General Reduction of Order]
+    Consider a general homogeneous linear ODE:
+    $$y''(x)+p(x)y'(x)+q(x)y(x)=0$$
+    and suppose $y_1(x)$ is one solution to the differential equation. Then
+    the second solution to the differential equation is
+    $$y_2(x) = y_1(x)\int \frac{u(x)}{[y_1(x)]^2} \dif x,$$
+    where $u(x) = e^{-\int p(x) \dif x}$.
+\end{theorem}
+\begin{proof}
+    We assume the second solution is of the form $y_2(x) = f(x)y_1(x)$ for
+    some function $f$. Thus,
+    $$y_2' = f'y_1+fy_1'~~~~y_2'' = f''y_1+2f'y_1'+fy_1''.$$
+    Substituting these expressions back into the original differential
+    equation, we get
+    $$f''y_1+2f'y_1'+fy_1''+p(f'y_1+fy_1')+qfy_1 = 0.$$ Rearranging these
+    terms, we obtain $$f(y_1''+py_1'+qy_1)+f''y_1+2f'y_1'+pf'y_1 = 0.$$ Notice
+    that the term in the parentheses becomes $0$ since $y_1$ is a solution
+    to the differential equation. Therefore, we are simply left with
+    $$f''y_1+2f'y_1'+pf'y_1 = 0.$$ Rearranging and letting $g(x) = f'(x)$,
+    $$g'(x) = -g(x)\left(2\frac{y_1'(x)}{y_1(x)}+p(x)\right).$$ Now, we simply
+    have a first-order ODE in terms of $g(x)$. It can then be shown that
+    $f(x) = \int \frac{u(x)}{[y_1(x)]^2} \dif x$ where 
+    $u(x) = e^{-\int p(x) \dif x}$. It then follows that
+    $$y_2(x) = y_1(x)\int \frac{u(x)}{[y_1(x)]^2} \dif x.$$
+\end{proof}
+\begin{corollary}[Reduction of Order with Constant Coefficients]
+    Consider a homogeneous linear ODE with constant coeffiecients:
+    $$ay''(x)+by'(x)+cy(x) = 0$$ where $a,b,c \in \RR \text{\textbackslash} \{0\}$ and suppose the 
+    discriminant, $b^2-4ac$, vanishes due to the presence of a repeated
+    root in the characteristic equation. Additionally suppose $y_1(x)$ is 
+    one solution to the differential equation. Then the second solution to the
+    differential equation is $y_2(x) = xy_1(x)$.
+\end{corollary}
+\begin{proof}
+    Letting $y=e^{mx}$ and solving for $m$ from the resulting characteristic
+    equation gives $m = -\frac{b}{2a}$. Therefore $y_1(x) = e^{-\frac{b}{2a}x}$.
+\end{proof}
 \begin{example}
     $$y''+y'+(1/4)y=0;~y(0) = 3; ~ y'(0) = -3.5.$$
 \end{example}
@@ -286,17 +341,25 @@ The following is a useful guessing guide:
     that $C = \frac{1}{2}$. Therefore 
     $$\boxed{y = C_1e^{-x}+C_2e^{-3x}+\frac{1}{2}xe^{-x}}.$$
 \end{soln}
-
-\begin{definition}
-    \alert{Variation of Parameter} involve differential equations
-    of variable coefficients. For $a_2y''+a_1y'+a_0y=f(x)$. First,
-    we make the leading coefficient $1$ by dividing by $a_2$. Thus,
-    $$y'' + p(x)y' + q(x)y = r(x).$$ We still do the homogeneous
-    portion first: $y_h = C_1y_1+C_2y_2$. Then $y_p = u(x)y_1(x)+v(x)y_2(x)$,
-    where $u' = -ry_2/w$ and $v'=ry_1/w$, where 
-    $$w = \det \left( \begin{bmatrix} y_1 & y_2 \\ y_1' & y_2' \end{bmatrix}\right).$$
-    This determinant is called the \alert{Wronskian}.
-\end{definition}
+\begin{theorem}[Variation of Parameters]
+    The method of variation of parameters is a technique for finding a particular 
+    solution to a nonhomogeneous linear second order ODE:
+    $$y''+P(x)y'+Q(x)y = R(x)$$
+    provided that the general solution of the corresponding homogeneous linear 
+    second order ODE:
+    $$y''+P(x)y'+Q(x)y = 0$$ is already known. The particular solution is then
+    $$y_p = u(x)y_1(x)+v(x)y_2(x)$$ such that
+    $$u'(x) = -\frac{y_2R(x)}{W(y_1,y_2)}~\text{and}~v'(x) = \frac{y_1R(x)}{W(y_1,y_2)},$$
+    where $W(y_1,y_2)$ denotes the Wronskian of $y_1$ and $y_2$.
+\end{theorem}
+\begin{proof}
+    First, we have
+    \begin{align*}
+        y_p' &= \left(u'y_1+uy_1'\right) + \left(v'y_2+vy_2'\right) \\
+             &= \left(uy_1'+vy_2'\right) + \left(u'y_1+v'y_2\right)
+    \end{align*}
+    by the product rule.
+\end{proof}
 \begin{example}[Variation of parameters]
     $$y''+4y'+4y = e^{-2x}/x^2.$$
 \end{example}
@@ -351,3 +414,5 @@ The following is a useful guessing guide:
 %    Find $y$ for the following differential equation and initial values
 %    $$y'''-7y'+6y = 0; ~ y(0) = 0; ~ y'(0) = 0; ~ y''(0) = 1.$$
 %\end{problem}
+ 
+
