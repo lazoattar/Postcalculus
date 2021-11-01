@@ -289,14 +289,41 @@ $$y''+8y'+25y = 0.$$
     \end{align*}
 \end{soln}
 
-\section{Non Homogeneous ODEs}
-This occurs when $f(x) \neq 0$.
-Our solution will still include the homogeneous potion
-$y = y_h(x) + y_p(x)$. Some methods for solving these are
-\alert{undetermined coefficients}, which can only be used for scalar coefficients,
-and \alert{variation of parameters}, which can be used with scalar or variable 
-coefficients.
-\newpage
+\section{Nonhomogeneous Ordinary Differential Equations}
+A \alert{nonhomogeneous} differential equation is of the form
+$$a_ny^{(n)} +a_{n-1}y^{(n-1)}+\cdots+a_1y'+a_0y = f(x)$$
+where $a_i \in \RR[x]$ for $i \in \{1,2,\dots,i\}$ and $f(x) \neq 0$. 
+The general solution to a nonhomogeneous
+differential equation is $y = y_h+y_p$, where $y_h$ is found from letting
+the left hand side equal $0$ and the particular solution, $y_p$, is found
+by using one of two methods, namely \alert{undetermined coefficients} or
+\alert{variation of parameters}. Undetermined coefficients can only be used
+with differential equations with scalar coefficients while variation of parameters
+can be used with scalar or variable coefficients.
+
+\begin{theorem}[Undetermined Coefficients]
+    Consider the differential equation
+    $$a_2y''(x)+a_1y'(x)+a_0(x) = f(x).$$
+    In order to solve for the particular solution, $y_p$, we guess $y_p$
+    based on the follwing table
+    \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        $f(x)$ & $y_p(x)$ \\
+        \hline
+        $ae^{\beta x}$ & $Ae^{\beta x}$ \\
+        $a\cos(\beta x)$ & $A\cos(\beta x)+B\sin(\beta x)$ \\
+        $b\sin(\beta x)$ & $A\cos(\beta x)+B\sin(\beta x)$ \\
+        $a\cos(\beta x)+b\sin(\beta x)$ & $A\cos(\beta x)+B\sin(\beta x)$ \\
+        $n$th deg polynomial & $A_nx^n+A_{n-1}x^{n-1}+\cdots+A_0$ \\
+        \hline
+        \end{tabular}
+    \end{center}
+    In addition, if $f(x)$ is a linear combination of any of the forms
+    above, then $y_p(x)$ is also a linear combination of the guesses for
+    each of the forms present in $f(x)$.
+\end{theorem}
+
 \begin{example}[Undetermined Coefficients]
     $$y''-4y' + 3y = e^{-x};~y(0) = 1;~y'(0)=0.$$
 \end{example}
@@ -313,13 +340,6 @@ coefficients.
     Using the initial values, we find that
     $$\boxed{y = \frac{5}{4}e^{x}-\frac{3}{8}e^{3x} + \frac{1}{8}e^{-x}}.$$
 \end{soln}
-The following is a useful guessing guide:
-\begin{align*}
-    r(x) &\implies y_p(x) \\
-    ke^{rx} &\implies Ce^{rx} \\
-    kx^n &\implies P_n = a_nx^n + a_{n-1}x^{n-1} + \cdots a_0 \\
-    k\cos(wx)~\text{or}~k\sin(wx) &\implies a\cos(wx)+b\sin(wx).
-\end{align*}
 \begin{example}[Guessing Practice with Undetermined Coefficients]
    $$ y''+2y'+y = \cos(2x)$$
 \end{example}

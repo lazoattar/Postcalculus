@@ -10,4 +10,4 @@
 \contentsline {chapter}{\numberline {3}Ordinary Differential Equations}{15}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Separable Differential Equations}{15}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Homogeneous Ordinary Differential Equations}{15}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Non Homogeneous ODEs}{20}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Nonhomogeneous Ordinary Differential Equations}{20}{section.3.3}%
