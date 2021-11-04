@@ -303,7 +303,7 @@ can be used with scalar or variable coefficients.
 
 \begin{theorem}[Undetermined Coefficients]
     Consider the differential equation
-    $$a_2y''(x)+a_1y'(x)+a_0(x) = f(x).$$
+    $$a_2y''(x)+a_1y'(x)+a_0y(x) = f(x).$$
     In order to solve for the particular solution, $y_p$, we guess $y_p$
     based on the follwing table
     \begin{center}
@@ -418,8 +418,38 @@ can be used with scalar or variable coefficients.
     $$w = \det \left( \begin{bmatrix}\cos(2x)&\sin(2x) \\ -2\sin(2x) & 2\cos(2x) \end{bmatrix}\right)
     =2.$$ Thus, $$u'(x) = -\frac{\tan x \sin (2x)}{2} = -\sin^2(x)$$
     and $$v'(x) = \frac{1}{2}\ln |\cos x| - \frac{\cos(2x)}{4} = \frac{\sin(2x)}{2}-\frac{1}{2}\tan x.$$
-    Solving, we find $u(x) = \frac{\sin(2x)}{4} - \frac{1}{2}x$.
+    Solving, we find $u(x) = \frac{\sin(2x)}{4} - \frac{1}{2}x$. 
+    $v(x) = \frac{1}{2}\ln |\cos x| - \frac{\cos 2x}{4}$. Thus,
+    $$y_p = -\frac{1}{2}\cos(2x)+\frac{1}{2}\sin(2x)\ln |\cos x|.$$
+    So, $$y = C_1\cos(2x)+C_2\sin(2x)-\frac{1}{2}\cos(2x)+\frac{1}{2}\sin(2x)\ln |\cos x|$$
 \end{soln}
+\begin{exercise}
+    Find $y$ for the differential equation $y''+3y'+2y=\frac{1}{1+e^x}$.
+\end{exercise}
+
+\section{Ordinary Differential Equations with Variable Coefficients}
+\alert{Euler's Equation} is the following
+$$a_nx^ny^{(n)} + a_{n-1}x^{n-1}y^{(n-1)} + \cdots a_1xy'+a_0y = f(x).$$
+The methods for solving these differential equations are the 
+\alert{transformation method}, which changes to an equation with constant
+coefficients, and the \alert{direct method}.
+
+\begin{theorem}[Transformation Method]
+    Let $x = e^{z}$. Plugging in $e^z$ into $y(x)$, we get $\hat{y}(z)$.
+    Thus, $$y' = \frac{\dif y}{\dif x} = \frac{\dif \hat{y}}{\dif z}\frac{\dif z}{\dif x} = 
+    \hat{y}' \frac{\dif z}{\dif x} = \hat{y}' \frac{1}{x}.$$ Then, $y''$ follows
+    to be $$y'' = \frac{\hat{y}''-\hat{y}'}{x^2}.$$
+\end{theorem}
+\begin{example}
+    We seek to solve the differential equation $$x^2y''-xy'+y=0.$$
+    Using the transformation method, we get
+    $$x^2\left(\frac{\hat{y}''-\hat{y}'}{x^2}\right) 
+    - x\left( \frac{\hat{y}'}{x}\right)+\hat{y} = 0.$$ Simplifying,
+    we get $$\hat{y}''-2\hat{y}'+\hat{y} = 0.$$ This is now a differential
+    equation with constant coefficients, which we know how to solve easily.
+    Thus, we let $\hat{y} = e^{mz}$. Then, $\hat{y_h} = Ae^{z}+Bze^{z}$. Putting
+    everything in $x$, we get $$y_h = Ax+Bx\ln x.$$
+\end{example}
 
 %\section{Problems}
 %\begin{problem}
