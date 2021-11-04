@@ -440,7 +440,7 @@ coefficients, and the \alert{direct method}.
     \hat{y}' \frac{\dif z}{\dif x} = \hat{y}' \frac{1}{x}.$$ Then, $y''$ follows
     to be $$y'' = \frac{\hat{y}''-\hat{y}'}{x^2}.$$
 \end{theorem}
-\begin{example}
+\begin{example}[Transformation Method]
     We seek to solve the differential equation $$x^2y''-xy'+y=0.$$
     Using the transformation method, we get
     $$x^2\left(\frac{\hat{y}''-\hat{y}'}{x^2}\right) 
@@ -450,7 +450,27 @@ coefficients, and the \alert{direct method}.
     Thus, we let $\hat{y} = e^{mz}$. Then, $\hat{y_h} = Ae^{z}+Bze^{z}$. Putting
     everything in $x$, we get $$y_h = Ax+Bx\ln x.$$
 \end{example}
-
+\begin{theorem}[Direct Method]
+    Assume $y=x^m$, where $m \in \CC$.
+\end{theorem}
+\begin{example}[Direct Method]
+    We seek to solve the differential equation $$x^2y''-xy'+y = 0.$$
+    Letting $y=x^m$, we have $y' = mx^{m-1}$ and $y'' = m(m-1)x^{m-2}$.
+    Plugging in, we get $x^m\left(m^2-2m+1\right) = 0$. Therefore, $m=1$,
+    meaning that $y_1 = C_1x$
+    We now proceed to use reduction of order. Thus, $y_2 = f(x)y_1$.
+    So, 
+    \begin{align*}
+        y_2' &= f'y_1+fy_1'=f'x+f \\
+        y_2'' &= f''y_1+2f'y_1'+y_1''=f''x+2f'.
+    \end{align*}
+    Plugging this back into the original differential equation, we get
+    $$x^2\left(xf''(x)+2f'(x)\right)-x\left(xf'(x)+f(x)\right)+xf(x) = 0.$$
+    Simplifying and rearranging, we get $$x^3f''(x)+x^2f'(x) = 0.$$ Letting
+    $g(x) = f'(x)$, we obtain the following separable differential equation
+    $$\frac{1}{g} \frac{\dif g}{\dif x} = -\frac{1}{x} \implies g(x) = \frac{1}{x}.$$
+    Thus, $f(x) = \ln x$. Finally, $y_2 = x \ln x$ and $$y_h = Ax+Bx\ln x.$$
+\end{example}
 %\section{Problems}
 %\begin{problem}
 %    Find $y$ for the following differential equation and initial values
