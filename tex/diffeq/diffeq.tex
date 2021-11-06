@@ -10,6 +10,7 @@ a separation of variables is most helpful as a first try when attempting
 first-order linear ordinary differential equations. We go more in detail later
 in the chapter.
 
+
 %\begin{example}
 %    Find $y$ for the following differential equation:
 %    $$\frac{dy}{dx} = x.$$
@@ -429,7 +430,7 @@ can be used with scalar or variable coefficients.
 
 \section{Ordinary Differential Equations with Variable Coefficients}
 \alert{Euler's Equation} is the following
-$$a_nx^ny^{(n)} + a_{n-1}x^{n-1}y^{(n-1)} + \cdots a_1xy'+a_0y = f(x).$$
+$$a_nx^ny^{(n)} + a_{n-1}x^{n-1}y^{(n-1)} + \cdots +a_1xy'+a_0y = f(x).$$
 The methods for solving these differential equations are the 
 \alert{transformation method}, which changes to an equation with constant
 coefficients, and the \alert{direct method}.
@@ -440,12 +441,15 @@ coefficients, and the \alert{direct method}.
     \hat{y}' \frac{\dif z}{\dif x} = \hat{y}' \frac{1}{x}.$$ Then, $y''$ follows
     to be $$y'' = \frac{\hat{y}''-\hat{y}'}{x^2}.$$
 \end{theorem}
+\begin{exercise}
+    Find $y'''$.
+\end{exercise}
 \begin{example}[Transformation Method]
     We seek to solve the differential equation $$x^2y''-xy'+y=0.$$
     Using the transformation method, we get
     $$x^2\left(\frac{\hat{y}''-\hat{y}'}{x^2}\right) 
-    - x\left( \frac{\hat{y}'}{x}\right)+\hat{y} = 0.$$ Simplifying,
-    we get $$\hat{y}''-2\hat{y}'+\hat{y} = 0.$$ This is now a differential
+    - x\left( \frac{\hat{y}'}{x}\right)+\hat{y} = 0.$$ Simplifying gives
+    $$\hat{y}''-2\hat{y}'+\hat{y} = 0.$$ This is now a differential
     equation with constant coefficients, which we know how to solve easily.
     Thus, we let $\hat{y} = e^{mz}$. Then, $\hat{y_h} = Ae^{z}+Bze^{z}$. Putting
     everything in $x$, we get $$y_h = Ax+Bx\ln x.$$
@@ -453,6 +457,7 @@ coefficients, and the \alert{direct method}.
 \begin{theorem}[Direct Method]
     Assume $y=x^m$, where $m \in \CC$.
 \end{theorem}
+\newpage
 \begin{example}[Direct Method]
     We seek to solve the differential equation $$x^2y''-xy'+y = 0.$$
     Letting $y=x^m$, we have $y' = mx^{m-1}$ and $y'' = m(m-1)x^{m-2}$.
@@ -470,6 +475,17 @@ coefficients, and the \alert{direct method}.
     $g(x) = f'(x)$, we obtain the following separable differential equation
     $$\frac{1}{g} \frac{\dif g}{\dif x} = -\frac{1}{x} \implies g(x) = \frac{1}{x}.$$
     Thus, $f(x) = \ln x$. Finally, $y_2 = x \ln x$ and $$y_h = Ax+Bx\ln x.$$
+\end{example}
+\begin{exercise}
+    Solve the differential equation $x^3y'''+2x^2y''+xy'-y = 0$.
+\end{exercise}
+\begin{example}[Nonhomogeneous Euler's]
+    We seek to solve the differential equation $$x^2y''-xy'+y=x^5.$$
+    Using the trasformation method, we get $$\hat{y}''-2\hat{y}'+\hat{y}=e^{5z}.$$
+    Now, we can simply use undetermined coefficients. Solving for the
+    homogeneous solution, we get $\hat{y_h} = Ae^z+Bze^z$. Then, we
+    get $\hat{y_p} = \frac{1}{16}e^{5z}$ So, $y_h = Ax+Bx\ln x$ and
+    $y_p = \frac{1}{16}x^5$. Finally, $$y = Ax+Bx\ln x + \frac{1}{16}x^5.$$
 \end{example}
 %\section{Problems}
 %\begin{problem}
