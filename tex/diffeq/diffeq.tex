@@ -546,6 +546,31 @@ $$y_h = \alpha_1 c_1e^{\lambda_1 x} + \alpha_2 c_2e^{\lambda_2 x}.$$
         $$y_h = \frac{1}{3} \begin{bmatrix} 2 \\ 1 \\ -1\end{bmatrix}e^{-x}
         +\frac{1}{3} \begin{bmatrix}1 \\ -1 \\ 1 \end{bmatrix}e^{5x}.$$
 \end{example}
+\begin{example}[Repeated Roots with no Basis]
+    We seek to solve the following systems of differentials 
+    $$y' = \begin{bmatrix} 8 & 1 \\ -4 & 4\end{bmatrix}y;~y(0) =  
+    \begin{bmatrix} 17 \\ 42 \end{bmatrix}.$$
+    The eigenvalue of $\bold{A}$ is $\lambda = 6$, where the eigenvector
+    is $\bold{C} = \begin{bmatrix} -1 \\ 2 \end{bmatrix}$. Therefore,
+    $y_1 = \alpha_1\begin{bmatrix} -1 \\ 2 \end{bmatrix}e^{6x}.$ Now,
+    we proceed to use a method that is similar to reduction of order. Thus,
+    we let 
+    $$y_2 = \begin{bmatrix} a+bx \\ c+dx \end{bmatrix} e^{6x} \implies
+    y_2' = \begin{bmatrix} b \\ d \end{bmatrix} e^{6x}+
+    \begin{bmatrix} -1 \\ 2 \end{bmatrix}6e^{6x}$$
+    Plugging into the original differentual equation, we have
+    $$\begin{bmatrix} b \\ d \end{bmatrix} e^{6x}+
+    \begin{bmatrix} -1 \\ 2 \end{bmatrix}6e^{6x} = 
+    \begin{bmatrix} 8 & 1 \\ -4 & 4\end{bmatrix}\begin{bmatrix} a+bx \\ c+dx \end{bmatrix} e^{6x}$$
+    Therefore,
+    $$\begin{bmatrix} b+6a \\ d+6c \end{bmatrix}e^{6x}+\begin{bmatrix} 6b \\ 6d \end{bmatrix}xe^{6x} = 
+    \begin{bmatrix} 8a+c \\ -4a+4c \end{bmatrix}e^{6x} + \begin{bmatrix} 8b+d \\ -4b+4d \end{bmatrix}xe^{6x}.$$
+    Solving the system, we have $$a=-\frac{m+2n}{4}~b=-\frac{m}{2}~c=n~d=m$$
+    for $m,n \in \RR$. Letting $n=1$ and $m=-2$, we get $a=0, b=1, c=1, d=-2$.
+    Therefore, $$y_2 = \alpha_2 \begin{bmatrix} x \\ 1-2x \end{bmatrix}e^{6x}.$$
+    Solving for $\alpha_1$ and $\alpha_2$, we find
+    $$y = -17\begin{bmatrix} -1 \\ 2 \end{bmatrix}e^{6x}+76\begin{bmatrix} x \\ 1-2x \end{bmatrix}e^{6x}.$$
+\end{example}
 %\section{Problems}
 %\begin{problem}
 %    Find $y$ for the following differential equation and initial values
