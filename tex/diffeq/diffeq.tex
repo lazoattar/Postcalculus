@@ -546,6 +546,7 @@ $$y_h = \alpha_1 c_1e^{\lambda_1 x} + \alpha_2 c_2e^{\lambda_2 x}.$$
         $$y_h = \frac{1}{3} \begin{bmatrix} 2 \\ 1 \\ -1\end{bmatrix}e^{-x}
         +\frac{1}{3} \begin{bmatrix}1 \\ -1 \\ 1 \end{bmatrix}e^{5x}.$$
 \end{example}
+\newpage
 \begin{example}[Repeated Roots with no Basis]
     We seek to solve the following systems of differentials 
     $$y' = \begin{bmatrix} 8 & 1 \\ -4 & 4\end{bmatrix}y;~y(0) =  
@@ -569,8 +570,39 @@ $$y_h = \alpha_1 c_1e^{\lambda_1 x} + \alpha_2 c_2e^{\lambda_2 x}.$$
     for $m,n \in \RR$. Letting $n=1$ and $m=-2$, we get $a=0, b=1, c=1, d=-2$.
     Therefore, $$y_2 = \alpha_2 \begin{bmatrix} x \\ 1-2x \end{bmatrix}e^{6x}.$$
     Solving for $\alpha_1$ and $\alpha_2$, we find
-    $$y = -17\begin{bmatrix} -1 \\ 2 \end{bmatrix}e^{6x}+76\begin{bmatrix} x \\ 1-2x \end{bmatrix}e^{6x}.$$
+    $$y = -17\begin{bmatrix} -1 \\ 2 \end{bmatrix}e^{6x}+76\begin{bmatrix} x \\ 1-2x \end{bmatrix}e^{6x}
+    \implies y = \begin{bmatrix}17 \\42\end{bmatrix}e^{6x}+76\begin{bmatrix} 1\\ -2 \end{bmatrix}xe^{6x}.$$
 \end{example}
+\begin{exercise}[Undetermined Coefficients]
+    Solve the following sytem of differential equations:
+    $$y' = \begin{bmatrix} 1 & 2 \\ -1 & 4 \end{bmatrix}y + \begin{bmatrix} 1+x\\e^x \end{bmatrix}.$$
+\end{exercise}
+\begin{soln}
+    The homogeneous solution is $$y_h = \alpha_1 
+    \begin{bmatrix} 2 \\ 1 \end{bmatrix} + \alpha_2 \begin{bmatrix} 1 \\ 1 \end{bmatrix}e^{3x}.$$
+    The particular solution is 
+    $$y_p = \begin{bmatrix} d_1 \\ d_2 \end{bmatrix}e^x + \begin{bmatrix} r_1 \\ r_2\end{bmatrix}x + 
+    \begin{bmatrix} s_1 \\ s_2\end{bmatrix}.$$ Plugging into the original
+    differential equation, we obtain
+    \begin{align*}
+        \begin{bmatrix} d_1 \\ d_2 \end{bmatrix}e^x + \begin{bmatrix} r_1 \\ r_2\end{bmatrix} &= 
+        \begin{bmatrix} 1 & 2 \\ -1 & 4\end{bmatrix}\left(\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}e^x + 
+        \begin{bmatrix} r_1 \\ r_2\end{bmatrix}x + \begin{bmatrix} s_1 \\ s_2\end{bmatrix}\right)+
+        \begin{bmatrix} 1+x \\ e^x \end{bmatrix} \\
+        \begin{bmatrix} d_1 \\ d_2 \end{bmatrix}e^x + \begin{bmatrix} r_1 \\ r_2\end{bmatrix} &=
+        \begin{bmatrix} d_1+d_2 \\ -d_1+4d_2+1\end{bmatrix}e^x +\begin{bmatrix} r_1+2r_2+1 \\ -r_1+4r_2 \end{bmatrix}x+
+        \begin{bmatrix} s_1+2s_2+1 \\ -s_1+4s_2 \end{bmatrix}.
+    \end{align*}
+    Comparing coefficients, we find that 
+    \begin{align*}
+        d_1 &= 1 &d_2 &= 0 \\
+        r_1 &=-2/3 &r_2 &= -1/6 \\
+        s_1 &= 19/18 &s_2 &= -11/36
+    \end{align*}
+    Thus $$\boxed{y=\alpha_1\begin{bmatrix} 2 \\ 1 \end{bmatrix}e^x + \alpha_2 \begin{bmatrix} 1 \\ 1 \end{bmatrix}e^{3x}
+    +\begin{bmatrix} 1 \\ 0 \end{bmatrix} e^x + \begin{bmatrix} -2/3 \\ -1/6 \end{bmatrix}x
++\begin{bmatrix} 19/18 \\ -11/36 \end{bmatrix}}.$$
+\end{soln}
 %\section{Problems}
 %\begin{problem}
 %    Find $y$ for the following differential equation and initial values
