@@ -681,7 +681,24 @@ we have
       &= a_0 \left(\frac{x/3}{(1-(x/3))^2}+\frac{1}{1-(x/3)} \right) \\
       &=\frac{a_0}{(1-(x/3))^2}.
 \end{align*}
+
+\begin{theorem}[Frobenius Method]
+    In the case we are faced with the differential equation
+    $$y'' + p(x)y' + q(x)y = 0,$$ where $p(x)$ and $q(x)$ are of the
+    from $b(x)/x$ and $c(x)/x^2)$, respectively, the initial guess for $y$
+    is $$x^r \sum_{n \geq 0} a_n x^n.$$ The value of $r$ is determined by the
+    indicial equation $r(r-1)+rb_0 + c_0 = 0$. For the multuple $r$ values
+    found, use the bigger value of $r$. This method produces one fundamental
+    solution. The other solution is found with a reduction of order, where
+    $y_2=u(x)y_1(x)$ such that 
+    $$u'(x) = \frac{1}{y^2}e^{-\int p(x) \dif x}.$$
+\end{theorem}
+\begin{example}
+    We desire to solve the following differential equation
+    $$xy''+2y'+4xy = 0.$$ Re-expressing the differentual equation, we have
+    $$y'' + \frac{2}{x}y' + \frac{4x^2}{x^2}y = 0.$$
+\end{example}
 \section{SIR Epidemic Model}
 An illustrative example of a system of differential equations is modeling an
 epidemic taking into account the susceptable population, infected population, and
-recovered population.
+recovered population.\
