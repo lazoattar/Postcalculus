@@ -1,4 +1,4 @@
-\chapter{Ordinary Differential Equations}
+\chapter{Differential Equations}
 \section{Separable Differential Equations}
 
 A separable differential equation can be simplified to the form:
@@ -7,8 +7,9 @@ where $f$ and $g$ are functions of $x$ and $y$ respectively. Letting
 $G'(y)=g(y)$ and $F'(x)=f(x)$ and taking the integral of both sides of the
 differential equation, we get $$G(y) = F(x)+C$$ for some constant $C$. Using
 a separation of variables is most helpful as a first try when attempting
-first-order linear ordinary differential equations. We go more in detail later
-in the chapter.
+first-order linear ordinary differential equations. It is also used as a very
+useful intermediate step in solving more complex differential equations. We go 
+more in detail later in the chapter.
 
 
 %\begin{example}
@@ -53,14 +54,14 @@ in the chapter.
 %    both sides, we get
 %    $$\ln |y| = \frac{1}{2}x^2 + C \implies y = e^{\frac{1}{2}x^2+C}.$$
 %\end{soln}
-\begin{example}
-    Find $y$ for the following differential equation:
-    $$\frac{dy}{dx} = x^2y-2xy.$$
+\begin{example}[Separable Differential Eqiation]
+    Solve for $y$:
+    $$\frac{\dif y}{\dif x} = x^2y-2xy.$$
 \end{example}
 \begin{soln}
     Separating the variables, we see that $\frac{1}{y} \dif y = (x^2-2x) \dif x$.
-    Taking the integral of both sides we get that
-    $$\ln |y| = \frac{1}{3}x^3-x^2 + C \implies y = Ce^{\frac{1}{3}x^3-x^2}.$$
+    Taking the integral of both sides yields
+    $$\ln y = \frac{1}{3}x^3-x^2 + A \implies y = Ae^{\frac{1}{3}x^3-x^2}.$$
 \end{soln}
 %\begin{example}
 %    Find $y$ for the following differential equation:
@@ -85,23 +86,32 @@ The general from of a linear ordinary differential equation(ODE) is
 $$a_ny^{(n)} +a_{n-1}y^{(n-1)}+\cdots+a_1y'+a_0y = f(x),$$
 where $a_i \in \RR[x]$ for $i \in \{0, 1, \dots, n\}$ and $y^{(j)}$ denotes
 the $j$th derivative of $y$. It is then said that this ODE
-has \alert{order} $n$ since it is the highest derivative in the equation.
-\begin{example}[ODE]
-    $$\frac{d^2f}{dx^2} + 3 \frac{df}{dx} + 5 = 0  \implies y''+3y'+5=0.$$
-\end{example}
-\begin{remark}
-    Partial differential equations also exist.
-\end{remark}
+has \alert{order} $n$ since it is the highest derivative in the equation. An
+ODE is said to be \alert{homogenous} if $f(x) = 0$. Otherwise, it is said to be 
+a \alert{nonhomogeneous} ODE. The most common method of approaching homogeneous
+ODEs is ansatz. This is an educated guess that is made to help solve a problem.
+This will become apparent not only in homogeneous ODEs but more complex ones
+as well.
+%\begin{example}[ODE]
+%    $$\frac{d^2f}{dx^2} + 3 \frac{df}{dx} + 5 = 0  \implies y''+3y'+5=0.$$
+%\end{example}
+%\begin{remark}
+%    Partial differential equations also exist.
+%\end{remark}
 %\begin{example}[PDE]
 %    $$\frac{\partial^2f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = 0.$$
 %\end{example}
 
-\begin{definition}
-    A \alert{homogeneous} ordinary differential equation is one with $f(x) = 0$ 
-    and has constant coefficients.
-\end{definition}
+%\begin{definition}
+%    A \alert{homogeneous} ordinary differential equation is one with $f(x) = 0$ 
+%    and has constant coefficients.
+%\end{definition}
+
 \begin{example}[Homogeneous ODE]
-    Consider the differential equation $$y''+7y'+12y=0.$$ Functions of the
+    Solve for y:  $$y''+7y'+12y=0.$$ 
+\end{example}
+\begin{soln}
+    Functions of the
     form $y=e^{mx}$ are an educated guess for solving homoegeneous ODEs. So,
     letting $y=e^{mx}$ means $y' = me^{mx}$ and $y''= m^2e^{mx}$. Plugging
     these in our differential equation,
@@ -113,7 +123,8 @@ has \alert{order} $n$ since it is the highest derivative in the equation.
     Therefore, $m=-4,-3$, implying that $y_1=C_1e^{-4x}$ and $y_2=C_2e^{-3x}$. 
     This means that our solution of the differential
     equation is $$y_h = y_1+y_2 =  C_1e^{-4x} + C_2e^{-3x}.$$
-\end{example}
+\end{soln}
+
 At first, it might be puzzling why we consider $y=e^{mx}$ to be an educated
 guess for solving homogeneous ODEs with constant coeficients. However, let us
 consider the following first-order differential equation 
@@ -141,42 +152,52 @@ of finding the general solution.
 %    \end{align*}
 %    Solving, we get $C_1 = 3$ and $C_2 = 1$. So, $\boxed{y_h = 3e^{-2x}+e^{x}}$.
 %\end{soln}
+
 Now, we consider what happens if we get a polynomial with repeated roots or
 if we are already given a solution to the differential equation.
-\newpage
 \begin{example}[Homogeneous ODE with repeated roots]
-    $$y''+4y'+4y=0.$$
-    Let $y=e^{mx}$. This means $y'=me^{mx}$ and $y''=m^2e^{mx}$. PLugging in, 
+    Solve for $y$: $$y''+4y'+4y=0.$$
+\end{example}
+\begin{soln}
+    Let $y=e^{mx}$. This means $y'=me^{mx}$ and $y''=m^2e^{mx}$. Plugging in, 
     we get
     \begin{align*}
         m^2e^{mx}+4me^{mx}+4e^{mx} &= 0 \\
         e^{mx}(m+2)^2 &= 0.
     \end{align*}
-    Thus, $\boxed{y_1 = C_1e^{-2x}}$. We now proceed to use the  \alert{reduction of order} 
-    method.
-    So, $y_2 = f(x)\cdot y_1$. First, we have 
+    Therefore, the first fundamental solution is
+    $y_1 = e^{-2x}$. However, it is not clear what the second fundamental solution
+    to this differential equation is. In order to determine this, we use the method
+    of \alert{reduction of order}. This involves letting the second fundamental
+    solution being the product of $y_1$ and some function of $x$, say $f(x)$.
+    So, let $y_2 = f(x)\cdot y_1$. Now, we seek to find what $f(x)$ is. Thus, 
+    we want to find the first and second derivatives of $y_2$ in order to plug it
+    back into the original differential equation. This will aid us in finding
+    out more information regarding $f(x)$. Therefore, we have 
     \begin{align*}
-        y_2' &= f'(x)y_1+f(x)y_1' = f'(x)e^{-2x}-2f(x)e^{-2x}\\
-        y_2'' &= f''(x)y_1+2f'(x)y_1'+f(x)y_1'' = f''(x)e^{-2x}-4f'(x)e^{-2x}+4f(x)e^{-2x}.
+        y_2' &= f'(x)y_1+f(x)y_1' \\
+             &= f'(x)e^{-2x}-2f(x)e^{-2x}\\
+        y_2'' &= f''(x)y_1+2f'(x)y_1'+f(x)y_1'' \\
+              &= f''(x)e^{-2x}-4f'(x)e^{-2x}+4f(x)e^{-2x}.
     \end{align*}
-    Plugging this into the original differential equation, we get
+    Plugging this into the original differential equation and simplifying fully
+    yields $f''(x) = 0$.
+    %\begin{align*}
+    %    f''(x)e^{-2x}-4f'(x)e^{-2x}+4f(x)e^{-2x} + 4\left(f'(x)e^{-2x}-2f(x)e^{-2x} \right)
+    %    + 4f(x)e^{-2x} &= 0.
+    %\end{align*}
+    Now, let $g(x) = f'(x)$. This means $g'(x) = f''(x)$. So, $g'(x) = 0$. 
+    Solving for $g(x)$ we get $g(x) = A$. Therefore, $f'(x) = A$. Solving for
+    $f(x)$ then gives $f(x) = Ax + B$. Thus, 
+    $$y_2 = (Ax+B)e^{-2x} \implies y_2 = xe^{-2x}$$
+    since $y_2$ must be linearly independent from $y_1$.
+    Finally, we find the solution to the differential equation to be
     \begin{align*}
-        f''(x)e^{-2x}-4f'(x)e^{-2x}+4f(x)e^{-2x} + 4\left(f'(x)e^{-2x}-2f(x)e^{-2x} \right)
-        + 4f(x)e^{-2x} &= 0.
+        y = c_1y_1 + c_2y_2 = c_1e^{-2x} + c_2xe^{-2x}. 
     \end{align*}
-    Simplifying yields $f''(x) = 0$. Now, let $g(x) = f'(x)$. This means
-    $g'(x) = f''(x)$. So, $g'(x) = 0$. This is equivalent to $\frac{dg}{dx} = 0$.
-    Using separation of variables, we get $g(x) = C$. So, $f'(x) = C$. This is
-    the same as $\frac{df}{dx} = C \implies f(x) = C_1x+C_2$. Thus,
-    $$\boxed{y_2 = \left(C_1x+C_2\right)e^{-2x}}.$$
-    Adding the two solutions, we obtain
-    \begin{align*}
-        y_h &= y_1 + y_2 = C_0e^{-2x} + C_1 xe^{-2x} +C_2e^{-2x} \\
-        y_h &= Ce^{-2x} + Dxe^{-2x}.
-    \end{align*}
-\end{example}
-\begin{theorem}[General Reduction of Order]
-    Consider a general homogeneous linear ODE:
+\end{soln}
+\begin{theorem}[Reduction of Order]
+    Consider a general homogeneous linear ODE of order two:
     $$y''(x)+p(x)y'(x)+q(x)y(x)=0$$
     and suppose $y_1(x)$ is one solution to the differential equation. Then
     the second solution to the differential equation is
@@ -212,8 +233,8 @@ if we are already given a solution to the differential equation.
     Letting $y=e^{mx}$ and solving for $m$ from the resulting characteristic
     equation gives $m = -\frac{b}{2a}$. Therefore $y_1(x) = e^{-\frac{b}{2a}x}$.
 \end{proof}
-\begin{example}
-    $$y''+y'+(1/4)y=0;~y(0) = 3; ~ y'(0) = -3.5.$$
+\begin{example}[Reduction of Order]
+    Solve for $y$: $$y''+y'+(1/4)y=0;~y(0) = 3; ~ y'(0) = -3.5.$$
 \end{example}
 \begin{soln}
     Let $y=e^{mx}$. This means $y' = me^{mx}$ and $y''=m^2e^{mx}$. Plugging in,
@@ -223,32 +244,17 @@ if we are already given a solution to the differential equation.
         e^{mx}(4m^2+4m+1) &=0 \\
         e^{mx}(2m+1)^2 &=0.
     \end{align*}
-    Thus, $\boxed{y_1 = C_0e^{-\frac{1}{2}x}}$. We now proceed to use reduction
-    of order. So, $y_2 = f(x) \cdot y_1$. First, we have
+    Therefore $y_1 = e^{-x/2}$. Then, by the general result of reduction of order
+    on a homogeneous linear ODE with constant coefficients gives $y_2 = x\cdot y_1$.
+    So, the solution to the differential equation is 
     \begin{align*}
-    y_2' &= f'(x)y_1+f(x)y_1' = f'(x)e^{-x/2}-\frac{1}{2}f(x)e^{-x/2}\\
-    y_2'' &= f''(x)y_1+2f'(x)y_1'+f(x)y_1'' = f''(x)e^{-x/2}-f'(x)e^{-x/2}+\frac{1}{4}f(x)e^{-x/2}.
+        y = c_1e^{-x/2} + c_2 x e^{-x/2}
     \end{align*}
-    Plugging this into the original differential equation, we get
-    \begin{align*}
-        f''(x)e^{-x/2}-f'(x)e^{-x/2}+\frac{1}{4}f(x)e^{-x/2} + 
-        f'(x)e^{-x/2}-\frac{1}{2}f(x)e^{-x/2} +\frac{1}{4}f(x)e^{-x/2}= 0 \\
-        f''(x) = 0.
-    \end{align*}
-    Now, let $g(x) = f'(x)$. This means that $g'(x) = f''(x)$. So, $g'(x) =0$.
-    This means $g(x) = C$. So, $f'(x) =C$. Thus, $f(x) = C_1x+C_2$. THerefore,
-    $$y_2 = (C_1x+C_2)e^{-x/2}.$$
-    Adding the two solutions, we obtain 
-    \begin{align*}
-        y_h &= y_1 + y_2 = C_0e^{-x/2} + C_1xe^{-x/2} + C_2e^{-x/2} \\
-            &= Ce^{-x/2}+Dxe^{-x/2}.
-    \end{align*}
-    Using the inital values, we obtain
-    $$y_h = 3e^{-x/2}-2xe^{-x/2}.$$
+    Using the inital values to solve for constants $c_1$ and $c_2$, we finally
+    find
+    $$y = 3e^{-x/2}-2xe^{-x/2}.$$
 \end{soln}
-In general $y_2 = xy_1$.
-
-\begin{example}
+\begin{example}[Reduction of Order]
     $$y'''+3y''-4y = 0.$$
 \end{example}
 \begin{soln}
@@ -260,21 +266,29 @@ In general $y_2 = xy_1$.
         e^{mx}(m-1)(m^2+4m+4) &= 0\\
         e^{mx}(m-1)(m+2)^2 &= 0.
     \end{align*}
-    Therefore, $y_1 = C_1e^x$, $y_2 = C_2e^{-2x}$, and $y_3 = C_3xe^{-2x}$.
-    Thus, $$\boxed{y_h = c_1e^{x} + C_2e^{-2x} + C_3xe^{-2x}}.$$
+    Therefore, $y_1 = e^x$, $y_2 = e^{-2x}$, and $y_3 = xe^{-2x}$.
+    Thus, $$y_h = c_1e^{x} + c_2e^{-2x} + c_3xe^{-2x}.$$
 \end{soln}
+Thus far, we have examined ODEs which had characteristic equations with real
+roots. However, it may be the case that these characteristic equations obtain
+complex roots. The help of \alert{euler's formula} helps to clear any complex
+numbers in the solution.
 
+\begin{theorem}[Euler's Formula]
+    For any complex number $x$, $$e^{ix} = \cos x + i \sin x.$$
+\end{theorem}
+\begin{proof}
+    A taylor series expansion of both sides gives the result.
+\end{proof}
 \begin{example}[Complex Roots]
-   $$ y''+4y = 0.$$
+   Solve for $y$: $$ y''+4y = 0.$$
 \end{example}
 \begin{soln}
     Let $y=e^{mx}$. This means that $y'' = m^2e^{mx}$. Plugging in gives
-    $m= \pm 2i$. Thus, $y_h = C_1e^{2ix} + C_2e^{-2ix}$. Recall 
-    \alert{Euler's Theorem} $$e^{i\theta} = \cos \theta + i\sin \theta.$$
-    Plugging this in gives
+    $m= \pm 2i$. Thus, $$y = c_1e^{2ix} + c_2e^{-2ix}.$$ By Euler's Formula,
     \begin{align*}
-        y_h &= C_1(\cos 2x + i\sin 2x) + C_2(\cos 2x  -i\sin  2x) \\
-        y_h &= C_1\cos 2x + C_2 \sin 2x.
+        y &= c_1(\cos 2x + i\sin 2x) + c_2(\cos 2x  -i\sin  2x) \\
+        y &= c_1\cos 2x + c_2 \sin 2x.
     \end{align*}
 \end{soln}
 \begin{example}[Complex Roots]
@@ -631,57 +645,77 @@ $$y' = \mathbf{A}y + f.$$ Let the $y_1, y_2, \dots, y_n$ be the fundamental
     $$y = \alpha_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix}e^{4x} + \alpha_2
     \begin{bmatrix} 1 \\ -1 \end{bmatrix}e^{-2x}+\begin{bmatrix} 1 \\ -1\end{bmatrix}2t^{3/2}e^{-2t}.$$
 \end{example}
-
-\section{Using Power Series To Solve ODEs}
-Some very common power series are:
-\begin{align*}
-    e^x &= \sum_{n \geq 0} \frac{x^n}{n!} \\
-    \sin x &= \sum_{n \geq 0} (-1)^n \frac{x^{2n+1}}{(2n+1)!} \\
-    \cos x &= \sum_{n \geq 0} (-1)^n \frac{x^{2n}}{(2n)!} \\
-    \sum_{n \geq 0} x^n &= \frac{1}{1-x}
-\end{align*}
-We seek to solve the following differential equation using power series:
-$$(x-3)y' + 2y = 0.$$
-The guess we make for the solution of $y$ is
-$$y = \sum_{n \geq 0} a_n x^n = a_0 x^0 + a_1 x^1 + a_2 x^2 +\cdots.$$
-Taking the derivative of this, we get
-$$y' = \sum_{n \geq 1} a_n n x^{n-1} = a_1+2a_2x + 3a_3x^2 + \cdots.$$
-Plugging in this into our differential equation, we obtain
-\begin{align*}
-    (x-3)\sum_{n \geq 1} a_n n x^{n-1} + 2\sum_{n \geq 1} a_n x^n &= 0 \\
-    x\sum_{n \geq 1} a_n n x^{n-1} - 3\sum_{n \geq 1} a_n n x^{n-1}+2\sum_{n \geq 0} a_n x^n &= 0 \\
-    \sum_{n \geq 1} a_n n x^{n} - 3\sum_{n \geq 1} a_n n x^{n-1}+2\sum_{n \geq 0} a_n x^n & =0
-\end{align*}
-We proceed to perform a change of indices on the middle term. Let $n^{*}=n-1$
-We get 
-$$3\sum_{n \geq 1} a_n n x^{n-1} = 3\sum_{n^*+1 \geq 1} a_{n^*+1} (n^* +1)x^{n^*}$$
-Making the substitution $n^* \rightarrow n$, we get
-\begin{align*}
-    \sum_{n \geq 1} a_n n x^{n} - 3\sum_{n \geq 0} a_{n+1} (n+1)x^{n}+2\sum_{n \geq 0} a_n x^n &= 0\\
-    \sum_{n \geq 1} a_n n x^{n} + \sum_{n \geq 0} \left(2a_n-3a_{n+1}(n+1)\right)x^n &= 0 \\
-    \sum_{n \geq 1} a_n n x^{n} + \sum_{n \geq 1} \left(2a_n-3a_{n+1}(n+1)\right)x^n &= 3a_1-2a_0 \\
-    \sum_{n \geq 1}\left((n+2)a_n-3a_{n+1}(n+1)\right)x^n &= 3a_1 - 2a_0.
-\end{align*}
-Comparing coefficients gives $2a_0-3a_1 = 0$ and $(n+2)a_n-3a_{n+1}(n+1) = 0$ for all
-$n \geq 1$. Thus, we have the following recursion $$a_{n+1} = \frac{(n+2)a_n}{3(n+1)},$$
-where $a_1 = (2/3)a_0$. We try now to find a closed form for $a_n$. Find the first few
-terms, we obtain
-\begin{align*}
-    a_1 &= \frac{2}{3}a_0 \\
-    a_2 &= \frac{1}{3}a_0 \\
-    a_3 &= \frac{4}{3^3}a_0 \\
-    a_4 &= \frac{5}{3^4}a_0 \\
-    a_5 &= \frac{6}{3^5}a_0.
-\end{align*}
-Therefore, the closed form is most likely $$a_n = \frac{n+1}{3^n}a_0.$$ So,
-we have 
-\begin{align*}
-    y &= a_0\sum_{n \geq 0} \frac{n+1}{3^n} x^n \\
-      &= a_0 \sum_{n \geq 0} n \left(\frac{x}{3} \right)^n + a_0\sum_{n\geq 0} \left(\frac{x}{3}\right)^n \\
-      &= a_0 \left(\frac{x/3}{(1-(x/3))^2}+\frac{1}{1-(x/3)} \right) \\
-      &=\frac{a_0}{(1-(x/3))^2}.
-\end{align*}
-
+\newpage
+\section{Power Series Approach}
+Sometimes an ordinary differential equation is not solvable using the standard
+methods introduced thus far. Therefore, using a power series as a guess for the
+general solution can be a powerful approach. To examine this, we take a look
+at an example that may also be solved using a separation of variables.
+%Some very common power series are:
+%\begin{align*}
+%    e^x &= \sum_{n \geq 0} \frac{x^n}{n!} \\
+%    \sin x &= \sum_{n \geq 0} (-1)^n \frac{x^{2n+1}}{(2n+1)!} \\
+%    \cos x &= \sum_{n \geq 0} (-1)^n \frac{x^{2n}}{(2n)!} \\
+%    \sum_{n \geq 0} x^n &= \frac{1}{1-x}
+%\end{align*}
+\begin{example}[Power Series]
+    Solve for $y$: $$(x-3)y' + 2y = 0.$$
+\end{example}
+\begin{soln}
+    The guess we make for the general solution of $y$ is
+    $$y = a_0 x^0 + a_1 x^1 + a_2 x^2 +\cdots = \sum_{n = 0}^{\infty} a_n x^n.$$
+    Taking the derivative of this, we get
+    $$y' = a_1+2a_2x + 3a_3x^2 + \cdots = \sum_{n = 1}^{\infty} a_n n x^{n-1}.$$
+    Plugging in this into our differential equation, we obtain
+    \begin{align*}
+        (x-3)\sum_{n = 1}^{\infty} a_n n x^{n-1} + 2\sum_{n = 1}^{\infty} a_n x^n &= 0 \\
+        x\sum_{n = 1}^{\infty} a_n n x^{n-1} - 3\sum_{n = 1}^{\infty} a_n n x^{n-1}+2\sum_{n = 0}^{\infty} a_n x^n &= 0 \\
+        \sum_{n = 1}^{\infty} a_n n x^{n} - 3\sum_{n = 1}^{\infty} a_n n x^{n-1}+2\sum_{n = 0}^{\infty} a_n x^n & =0
+    \end{align*}
+    Now, we seek to obtain the same exponent on $x$ for each summation so that
+    it becomes easier to combine each sum. Therefore, we perform a \alert{change of
+    indices} on the middle term, letting $n \rightarrow n+1$. This gives
+    \begin{align*}
+        \sum_{n = 1}^{\infty} a_n n x^{n} - 3\sum_{n = 0}^{\infty} a_{n+1} (n+1)x^{n}+2\sum_{n = 0}^{\infty} a_n x^n &= 0\\
+        \sum_{n = 1}^{\infty} a_n n x^{n} + \sum_{n = 0}^{\infty} \left(2a_n-3a_{n+1}(n+1)\right)x^n &= 0 \\
+        \sum_{n = 1}^{\infty} a_n n x^{n} + \sum_{n = 1}^{\infty} \left(2a_n-3a_{n+1}(n+1)\right)x^n &= 3a_1-2a_0 \\
+        \sum_{n = 1}^{\infty}\left((n+2)a_n-3a_{n+1}(n+1)\right)x^n &= 3a_1 - 2a_0.
+    \end{align*}
+    Comparing coefficients gives $2a_0-3a_1 = 0$ and $(n+2)a_n-3a_{n+1}(n+1) = 0$ for all
+    $n \geq 1$. Thus, we have the following recursion $$a_{n+1} = \frac{(n+2)a_n}{3(n+1)},$$
+    where $a_1 = (2/3)a_0$. We try now to find a closed form for $a_n$. This
+    is usually done by finding a pattern among the terms. Thus, listing out
+    the first few therms, we have
+    \begin{center}
+        \begin{tabular}{| c | c |}
+            \hline
+            $n$ & $a_n$ \\
+            \hline
+            $0$ & $a_0$ \\
+            $1$ & $(2/3)a_0$ \\
+            $2$ & hi \\
+            $3$ & hi \\
+            $4$ & hi \\
+            $5$ & hi \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{align*}
+        a_1 &= \frac{2}{3}a_0 \\
+        a_2 &= \frac{1}{3}a_0 \\
+        a_3 &= \frac{4}{3^3}a_0 \\
+        a_4 &= \frac{5}{3^4}a_0 \\
+        a_5 &= \frac{6}{3^5}a_0.
+    \end{align*}
+    Therefore, the closed form is most likely $$a_n = \frac{n+1}{3^n}a_0.$$ So,
+    we have 
+    \begin{align*}
+        y &= a_0\sum_{n \geq 0} \frac{n+1}{3^n} x^n \\
+        &= a_0 \sum_{n \geq 0} n \left(\frac{x}{3} \right)^n + a_0\sum_{n\geq 0} \left(\frac{x}{3}\right)^n \\
+        &= a_0 \left(\frac{x/3}{(1-(x/3))^2}+\frac{1}{1-(x/3)} \right) \\
+        &=\frac{a_0}{(1-(x/3))^2}.
+    \end{align*}
+\end{soln}
 \begin{theorem}[Frobenius Method]
     In the case we are faced with the differential equation
     $$y'' + p(x)y' + q(x)y = 0,$$ where $p(x)$ and $q(x)$ are of the
@@ -698,7 +732,7 @@ we have
     $$xy''+2y'+4xy = 0.$$ Re-expressing the differentual equation, we have
     $$y'' + \frac{2}{x}y' + \frac{4x^2}{x^2}y = 0.$$
 \end{example}
-\section{SIR Epidemic Model}
-An illustrative example of a system of differential equations is modeling an
-epidemic taking into account the susceptable population, infected population, and
-recovered population.\
+%\section{SIR Epidemic Model}
+%An illustrative example of a system of differential equations is modeling an
+%epidemic taking into account the susceptable population, infected population, and
+%recovered population.\
