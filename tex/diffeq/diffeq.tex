@@ -685,53 +685,100 @@ at an example that may also be solved using a separation of variables.
     $n \geq 1$. Thus, we have the following recursion $$a_{n+1} = \frac{(n+2)a_n}{3(n+1)},$$
     where $a_1 = (2/3)a_0$. We try now to find a closed form for $a_n$. This
     is usually done by finding a pattern among the terms. Thus, listing out
-    the first few therms, we have
+    the first few terms, we have
     \begin{center}
         \begin{tabular}{| c | c |}
             \hline
             $n$ & $a_n$ \\
             \hline
-            $0$ & $a_0$ \\
-            $1$ & $(2/3)a_0$ \\
-            $2$ & hi \\
-            $3$ & hi \\
-            $4$ & hi \\
-            $5$ & hi \\
+            $0$ & $(1/3^0)a_0$ \\
+            $1$ & $(2/3^1)a_0$ \\
+            $2$ & $(3/3^2)a_0$ \\
+            $3$ & $(4/3^3)a_0$ \\
+            $4$ & $(5/3^4)a_0$ \\
+            $5$ & $(6/3^5)a_0$ \\
             \hline
         \end{tabular}
     \end{center}
-    \begin{align*}
-        a_1 &= \frac{2}{3}a_0 \\
-        a_2 &= \frac{1}{3}a_0 \\
-        a_3 &= \frac{4}{3^3}a_0 \\
-        a_4 &= \frac{5}{3^4}a_0 \\
-        a_5 &= \frac{6}{3^5}a_0.
-    \end{align*}
-    Therefore, the closed form is most likely $$a_n = \frac{n+1}{3^n}a_0.$$ So,
+    Therefore, the closed form for $(a_n)$ is $$a_n = \left(\frac{n+1}{3^n}\right)a_0.$$ 
+    This result may be proved by induction for completeness but that is left
+    as an exercise for the reader. So,
     we have 
     \begin{align*}
-        y &= a_0\sum_{n \geq 0} \frac{n+1}{3^n} x^n \\
-        &= a_0 \sum_{n \geq 0} n \left(\frac{x}{3} \right)^n + a_0\sum_{n\geq 0} \left(\frac{x}{3}\right)^n \\
-        &= a_0 \left(\frac{x/3}{(1-(x/3))^2}+\frac{1}{1-(x/3)} \right) \\
-        &=\frac{a_0}{(1-(x/3))^2}.
+        y &= a_0\sum_{n = 0}^{\infty} \left(\frac{n+1}{3^n}\right) x^n
+          = a_0 \sum_{n = 0}^{\infty} n \left(\frac{x}{3} \right)^n + a_0\sum_{n=0}^{\infty} \left(\frac{x}{3}\right)^n \\
+        &= a_0 \left(\frac{x/3}{(1-(x/3))^2}+\frac{1}{1-(x/3)} \right)
+        =\frac{a_0}{(1-(x/3))^2} \\
+        &= \frac{9a_0}{(3-x)^2}.
     \end{align*}
+    Combining the numerator into one constant, we finally obtain the general
+    solution for $y$ to be $$y = \frac{c}{(3-x)^2},$$
+    which can be shown is equivalent to the one derived from a separation
+    of variables.
 \end{soln}
 \begin{theorem}[Frobenius Method]
-    In the case we are faced with the differential equation
-    $$y'' + p(x)y' + q(x)y = 0,$$ where $p(x)$ and $q(x)$ are of the
-    from $b(x)/x$ and $c(x)/x^2)$, respectively, the initial guess for $y$
-    is $$x^r \sum_{n \geq 0} a_n x^n.$$ The value of $r$ is determined by the
-    indicial equation $r(r-1)+rb_0 + c_0 = 0$. For the multuple $r$ values
-    found, use the bigger value of $r$. This method produces one fundamental
-    solution. The other solution is found with a reduction of order, where
-    $y_2=u(x)y_1(x)$ such that 
-    $$u'(x) = \frac{1}{y^2}e^{-\int p(x) \dif x}.$$
+    The frobenius method is a way to find an infinite series solution
+    to a second-order ordinary differential equation of the form
+    $$x^2y'' + p(x)xy' + q(x)y = 0.$$ Dividing by $x^2$ gives a differentual
+    equation of the form 
+    $$y''+\frac{p(x)}{x}y'+\frac{q(x)}{x^2}y = 0.$$
+    The method then finds a solution of the form $$y=x^r\sum_{n=0}^{\infty}a_nx^n,$$
+    where the value of $r$ is determined by the
+    minimal solution to the \alert{indicial equation} $r(r-1)+p(0)r + c(0) = 0$.
+    The second fundamental solution may be found by a reduction of order:
+    $$y_2 = y_1(x)\int \frac{u(x)}{[y_1(x)]^2} \dif x ~ \text{where} ~ u(x) = e^{-\int p(x)/x \dif x}.$$
 \end{theorem}
 \begin{example}
-    We desire to solve the following differential equation
-    $$xy''+2y'+4xy = 0.$$ Re-expressing the differentual equation, we have
-    $$y'' + \frac{2}{x}y' + \frac{4x^2}{x^2}y = 0.$$
+    Solve for $y$:
+    $$xy''+2y'+4xy = 0.$$
 \end{example}
+\begin{soln}
+    Re-expressing the differentual equation, we have
+    $$y'' + \frac{2}{x}y' + \frac{4x^2}{x^2}y = 0.$$
+    Therefore, our indicial equation is $r(r-1)+2r=0$, giving $r=0$. So, our
+    general solution is of the form
+    $$y = \sum_{n = 0}^{\infty} a_n x^n.$$ Finding the first and second derivatives
+    and plugging in to the given differential equation gives
+    \begin{align*}
+        x\sum_{n = 2}^{\infty} a_n n (n-1)x^{n-2} + 2\sum_{n = 1}^{\infty} a_n n x^{n-1}
+        + 4x \sum_{n = 0}^{\infty} a_n x^n &= 0 \\
+        \sum_{n = 2}^{\infty} a_n n (n-1)x^{n-1} + \sum_{n = 1}^{\infty} 2a_n n x^{n-1}
+        +  \sum_{n = 0}^{\infty}4 a_n x^{n+1} &= 0.
+    \end{align*}
+    Performing a change of indices on the last term by letting $n \rightarrow n-2$,
+    we now have
+    \begin{align*}
+        \sum_{n = 2}^{\infty} a_n n (n-1)x^{n-1} + \sum_{n = 1}^{\infty} 2a_n n x^{n-1}
+        +  \sum_{n = 2}^{\infty}4 a_{n-2} x^{n-1} &= 0 \\
+        2a_1 + \sum_{n = 2}^{\infty} \left(a_n n (n+1)+4a_{n-2}  \right)x^{n-1} &= 0.
+    \end{align*}
+    Comparing coefficients, we have $a_1 = 0$ and $a_n n (n+1) + 4a_{n-2} = 0$ for
+    all $n \geq 2$. So, we have the recursion $$a_n = -\frac{4a_{n-2}}{n(n+1)}.$$
+    Listing out the first few terms yields
+    \begin{center}
+        \begin{tabular}{| c | c |}
+            \hline
+            $n$ & $a_n$ \\
+            \hline
+            $0$ & $((-4)^0/1!)a_0$ \\
+            $1$ & $0$ \\
+            $2$ & $((-4)^1/3!)a_0$ \\
+            $3$ & $0$ \\
+            $4$ & $((-4)^2/5!)a_0$ \\
+            $5$ & $0$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+    Therefore, the closed form of the sequence $(a_n)$ is 
+    $$a_{2n} = \left(\frac{(-4)^n}{(2n+1)!}\right)a_0$$
+    Plugging this into our guess for the first fundamental solution gives us
+    \begin{align*}
+        y_1 = a_0\sum_{n = 0}^{\infty} \frac{(-1)^n}{(2n+1)!}(2x)^{2n} = \frac{\sin 2x}{2x}.
+    \end{align*}
+    Then, a reduction of order allows us to obtain the second solution, namely
+    $y_2 = \frac{\cos 2x}{2x}$. Therefore, the general solution to our differential
+    equation is $$y = c_1\left(\frac{\sin 2x}{2x}\right)+c_2\left(\frac{\cos 2x}{2x}\right).$$
+\end{soln}
 %\section{SIR Epidemic Model}
 %An illustrative example of a system of differential equations is modeling an
 %epidemic taking into account the susceptable population, infected population, and
