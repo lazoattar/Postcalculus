@@ -719,16 +719,16 @@ at an example that may also be solved using a separation of variables.
 \begin{theorem}[Frobenius Method]
     The frobenius method is a way to find an infinite series solution
     to a second-order ordinary differential equation of the form
-    $$x^2y'' + p(x)xy' + q(x)y = 0.$$ Dividing by $x^2$ gives a differentual
+    $$x^2y'' + p(x)xy' + q(x)y = 0.$$ Dividing by $x^2$ gives a differential
     equation of the form 
     $$y''+\frac{p(x)}{x}y'+\frac{q(x)}{x^2}y = 0.$$
     The method then finds a solution of the form $$y=x^r\sum_{n=0}^{\infty}a_nx^n,$$
     where the value of $r$ is determined by the
-    minimal solution to the \alert{indicial equation} $r(r-1)+p(0)r + c(0) = 0$.
+    maximal solution to the \alert{indicial equation} $r(r-1)+p(0)r + q(0) = 0$.
     The second fundamental solution may be found by a reduction of order:
     $$y_2 = y_1(x)\int \frac{u(x)}{[y_1(x)]^2} \dif x ~ \text{where} ~ u(x) = e^{-\int p(x)/x \dif x}.$$
 \end{theorem}
-\begin{example}
+\begin{example}[Frobenius]
     Solve for $y$:
     $$xy''+2y'+4xy = 0.$$
 \end{example}
@@ -773,12 +773,13 @@ at an example that may also be solved using a separation of variables.
     $$a_{2n} = \left(\frac{(-4)^n}{(2n+1)!}\right)a_0$$
     Plugging this into our guess for the first fundamental solution gives us
     \begin{align*}
-        y_1 = a_0\sum_{n = 0}^{\infty} \frac{(-1)^n}{(2n+1)!}(2x)^{2n} = \frac{\sin 2x}{2x}.
+        y_1 = a_0\sum_{n = 0}^{\infty} \frac{(-1)^n(2x)^{2n}}{(2n+1)!} = a_0\left(\frac{\sin 2x}{2x}\right).
     \end{align*}
     Then, a reduction of order allows us to obtain the second solution, namely
     $y_2 = \frac{\cos 2x}{2x}$. Therefore, the general solution to our differential
     equation is $$y = c_1\left(\frac{\sin 2x}{2x}\right)+c_2\left(\frac{\cos 2x}{2x}\right).$$
 \end{soln}
+
 %\section{SIR Epidemic Model}
 %An illustrative example of a system of differential equations is modeling an
 %epidemic taking into account the susceptable population, infected population, and

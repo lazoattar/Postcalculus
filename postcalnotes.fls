@@ -395,6 +395,10 @@ INPUT tex/diffeq/diffeq.aux
 INPUT tex/diffeq/diffeq.aux
 INPUT tex/applications/applications.aux
 INPUT tex/applications/applications.aux
+INPUT tex/heat/heat.aux
+INPUT tex/heat/heat.aux
+INPUT tex/electricity/electricity.aux
+INPUT tex/electricity/electricity.aux
 OUTPUT postcalnotes.aux
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -504,6 +508,12 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/omscmr.fd
 OUTPUT tex/applications/applications.aux
 INPUT tex/applications/applications.tex
 INPUT tex/applications/applications.tex
+OUTPUT tex/heat/heat.aux
+INPUT tex/heat/heat.tex
+INPUT tex/heat/heat.tex
+OUTPUT tex/electricity/electricity.aux
+INPUT tex/electricity/electricity.tex
+INPUT tex/electricity/electricity.tex
 INPUT postcalnotes.aux
 INPUT tex/linalg/linalg.aux
 INPUT tex/linalg/linalg.aux
@@ -513,6 +523,10 @@ INPUT tex/diffeq/diffeq.aux
 INPUT tex/diffeq/diffeq.aux
 INPUT tex/applications/applications.aux
 INPUT tex/applications/applications.aux
+INPUT tex/heat/heat.aux
+INPUT tex/heat/heat.aux
+INPUT tex/electricity/electricity.aux
+INPUT tex/electricity/electricity.aux
 INPUT ./postcalnotes.out
 INPUT ./postcalnotes.out
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc

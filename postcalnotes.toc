@@ -16,3 +16,5 @@
 \contentsline {section}{\numberline {3.6}Power Series Approach}{31}{section.3.6}%
 \contentsline {chapter}{\numberline {4}Applications of Mathematical Methods}{35}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Fundamentals of Translational and Rotational Systems}{35}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Heat Transfer and Transport}{37}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Electrical Systems}{41}{chapter.6}%
