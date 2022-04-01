@@ -18,3 +18,4 @@
 \contentsline {section}{\numberline {4.1}Fundamentals of Translational and Rotational Systems}{35}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Heat Transfer and Transport}{37}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Electrical Systems}{41}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Laplace Transforms}{43}{chapter.7}%

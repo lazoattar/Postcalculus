@@ -1,0 +1,114 @@
+\chapter{Laplace Transforms}
+
+The \alert{laplace transform} of a function, $f(t)$, is 
+$$F(s) = \int_0^{\infty} f(t)e^{-st} \dif t,$$ where $s = a + bi$ for $a > 0$.
+
+\begin{example}
+    Solve for $\omega(t)$: 
+    $$\dot{\omega}+2\omega = 6,$$
+    given $\omega(0) = 0$.
+\end{example}
+\begin{soln}
+    Taking the laplacian of both sides, we obtain
+    $$\mathcal{L} \{ \dot{\omega}+2\omega \} = \mathcal{L} \{6\}
+    \implies -\omega(0) + s\Omega(s)+2\Omega(s) = \frac{6}{s}.$$
+    Proceeding to solve for $\Omega(s)$ results in
+    $$\Omega(s) = \frac{6}{s(s+2)} = \frac{3}{s} - \frac{3}{s+2}.$$
+    So, taking the inverse laplace transform gives
+    $$w(t) = 3-3e^{-2t}.$$
+\end{soln}
+
+\begin{example}
+    Solve for $x(t)$:
+    $$\ddot{x}+3\dot{x}+2x = 1,$$
+    given $x(0) = \dot{x}(0) = 0$.
+\end{example}
+\begin{soln}
+    Taking the laplace transform of both sides, we obtain
+    $$\mathcal{L}\{\ddot{x}+3\dot{x}+2x\} = \mathcal{L}\{1\}$$
+    Therefore, $$-\dot{x}(0)-sx(0)+s^2X(s)+3(-x(0)+sX(s))+2X(s)=\frac{1}{s}.$$
+    Solving for $X(s)$ results in 
+    $$X(s) = \frac{1}{s(s^2+3s+2)} = \frac{1}{s(s+1)(s+2)} = \frac{1/2}{s}+\frac{-2}{s+1}+\frac{1/2}{s+2}$$
+    Taking the inverse laplace transform of both sides gives
+    $$x(t) = \frac{1}{2}-e^{-t}+\frac{1}{2}e^{-2t}.$$
+\end{soln}
+
+\begin{example}
+    Solve for $y(t)$:
+    $$y''+4y'-5y=0,$$
+    given $y(0)=1$, and $y'(0)=0$.
+\end{example}
+\begin{soln}
+    Taking the laplace transform of both sides we obtain
+    $$\left( -y'(0)-sy(0)+s^2Y(s)\right)+4\left( -y(0)+sY(s)\right)-5Y(s)=0.$$
+    Solving for $\mathcal{Y}(s)$, we obtain
+    $$\mathcal{Y}(s) = \frac{s+4}{s^2+4s-5} = \frac{5/6}{s-1}+\frac{1/6}{s+5}$$
+    Taking the inverse laplace transform of both sides, we obtain
+    $$y(t) = \frac{5}{6}e^t+\frac{1}{6}e^{-5t}.$$
+\end{soln}
+\begin{theorem}[Shifting Theorem]
+    $\mathcal{L}\{e^{-at}f(t)\} = F(a+s)$
+\end{theorem}
+
+\begin{example}
+    Solve for $y(t)$:
+    $$y''+4y'+4y = 0,$$
+    where $y(0) = 1$, and $y'(0) = 0$.
+\end{example}
+\begin{soln}
+    Taking the laplace transfrom of both sides, we obtain
+    $$\left(-y'(0)-sy(0)+s^2\mathcal{Y}(s)\right)+4\left(-y(0)+s\mathcal{Y}(s)\right)+4\mathcal{Y}(s).$$
+    Solving for $\mathcal{Y}(s)$,
+    $$\mathcal{Y}(s) = \frac{s+4}{s^2+4s+4} = \frac{1}{s+2}+\frac{2}{(s+2)^2}.$$
+    Taking the inverse laplace transform of both sides, we have
+    $$y(t) = e^{-2t}+2te^{-2t}$$
+\end{soln}
+
+\begin{example}
+    Solve for $y(t)$:
+    $$y''+4y=0,$$
+    given $y(0)=1$ and $y'(0)=0$.
+\end{example}
+\begin{soln}
+    Taking the laplace transform of both sides, we obtain
+    $$\left( -y'(0)-sy(0)+s^2\mathcal{Y}(s)\right)+4\mathcal{Y}(s) = 0.$$
+    Solving for $\mathcal{Y}(s)$,
+    $$\mathcal{Y}(s) = \frac{s}{s^2+4}$$
+    Therefore, taking the inverse laplace transform of both sides results in
+    $$y(t) = \cos 2t.$$
+\end{soln}
+
+\begin{example}
+    Solve for $y(t)$:
+    $$y''+8y'+25y=0,$$
+    given $y(0)=1$ and $y'(0)=0$.
+\end{example}
+\begin{soln}
+    Taking the laplace transform of both sides, we obtain
+    $$\left(-y'(0)-sy(0)+s^2\mathcal{Y}(s)\right)+8\left( -y(0)+\mathcal{Y}(s)\right)+25\mathcal{Y}(s)=0.$$
+    Solving for $\mathcal{Y}(s)$,
+    $$\mathcal{Y}(s) = \frac{s+8}{s^2+8s+25} = \frac{s+4}{(s+4)^2+9}+\frac{4}{3}\left(\frac{3}{(s+4)^2+9}\right).$$
+    Thus, by the \alert{shifting theorem} and taking the inverse laplace transform of
+    both sides results in
+    $$y(t) = e^{-4t}\cos(3t) + \frac{4}{3}e^{-4t}\sin(3t).$$
+\end{soln}
+
+\begin{example}
+    Solve for $y(t)$:
+    $$y''-6y'+15y = 2\sin(3t),$$
+    given $y(0)=-1$ and $y'(0)=-4$.
+\end{example}
+\begin{soln}
+    Taking the laplace transform of both sides results in
+    $$\left( -y'(0)-sy(0)+s^2\mathcal{Y}(s)\right)-6\left( -y(0)+s\mathcal{Y}(s)\right)+15\mathcal{Y}(s) = \frac{2}{s^2+9}.$$
+    Solving for $\mathcal{Y}(s)$,
+    \begin{align*}
+        \mathcal{Y}(s) &= \frac{6}{(s^2+9)(s^2-6s+15)}-\frac{s-2}{s^2-6s+15} \\
+                       &= \frac{-s^3+2s^2-9s+24}{(s^2+9)(s^2-6s+15)} \\
+                       &= \frac{s+1}{10(s^2+9)}-\frac{11s-25}{10(s^2-6s+15)} \\
+                       &= \frac{1}{10}\left(\frac{s+1}{s^2+9}-\frac{11s-25}{(s-3)^2+6}\right) \\
+                       &= \frac{1}{10}\left( \frac{s}{s^2+9} + \frac{1}{3}\left(\frac{3}{s^2+9}\right)-\frac{11(s-3)}{(s-3)^2+6}-\frac{8}{\sqrt{6}}\frac{\sqrt{6}}{(s-3)^2+6}\right).
+    \end{align*}
+    Then, taking the inverse laplace transform, we obtain
+    $$y(t) = \frac{1}{10}\left( \cos(3t)+\frac{1}{3}\sin(3t)-11e^{3t}\cos(\sqrt{6}t)-\frac{8}{\sqrt{6}}e^{3t}\sin(\sqrt{6}t)\right).$$
+\end{soln}

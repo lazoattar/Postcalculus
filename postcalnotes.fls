@@ -399,6 +399,8 @@ INPUT tex/heat/heat.aux
 INPUT tex/heat/heat.aux
 INPUT tex/electricity/electricity.aux
 INPUT tex/electricity/electricity.aux
+INPUT tex/laplace/laplace.aux
+INPUT tex/laplace/laplace.aux
 OUTPUT postcalnotes.aux
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -514,6 +516,9 @@ INPUT tex/heat/heat.tex
 OUTPUT tex/electricity/electricity.aux
 INPUT tex/electricity/electricity.tex
 INPUT tex/electricity/electricity.tex
+OUTPUT tex/laplace/laplace.aux
+INPUT tex/laplace/laplace.tex
+INPUT tex/laplace/laplace.tex
 INPUT postcalnotes.aux
 INPUT tex/linalg/linalg.aux
 INPUT tex/linalg/linalg.aux
@@ -527,6 +532,8 @@ INPUT tex/heat/heat.aux
 INPUT tex/heat/heat.aux
 INPUT tex/electricity/electricity.aux
 INPUT tex/electricity/electricity.aux
+INPUT tex/laplace/laplace.aux
+INPUT tex/laplace/laplace.aux
 INPUT ./postcalnotes.out
 INPUT ./postcalnotes.out
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
