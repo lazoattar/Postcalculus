@@ -3,6 +3,12 @@
 The \alert{laplace transform} of a function, $f(t)$, is 
 $$F(s) = \int_0^{\infty} f(t)e^{-st} \dif t,$$ where $s = a + bi$ for $a > 0$.
 
+\section{Well Known Laplace Transforms}
+
+$\mathcal{L}\{t^nf(t)\} = \frac{\dif^{(n)}}{\dif s ^ {(n)}}\mathcal{L}\{f(t)\}(-1)^n$
+
+\section{Ordinary Differential Equations}
+
 \begin{example}
     Solve for $\omega(t)$: 
     $$\dot{\omega}+2\omega = 6,$$
@@ -111,4 +117,126 @@ $$F(s) = \int_0^{\infty} f(t)e^{-st} \dif t,$$ where $s = a + bi$ for $a > 0$.
     \end{align*}
     Then, taking the inverse laplace transform, we obtain
     $$y(t) = \frac{1}{10}\left( \cos(3t)+\frac{1}{3}\sin(3t)-11e^{3t}\cos(\sqrt{6}t)-\frac{8}{\sqrt{6}}e^{3t}\sin(\sqrt{6}t)\right).$$
+\end{soln}
+
+\section{Systems of Differential Equations}
+Laplace transforms can also be used to solve systems of ordinary differential
+equations.
+
+\begin{example}
+    Solve for $y_1(t)$ and $y_2(t)$:
+    \begin{align*}
+        y_1' &= -3y_1-10y_2 \\
+        y_2' &= y_1+4y_2.
+    \end{align*}
+    given $y(0) = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$.
+\end{example}
+
+\begin{soln}
+    Taking the laplace transform of both equations, we find that
+    \begin{align*}
+        -y_1(0) + s\mathcal{Y}_1(s) &= -3\mathcal{Y}_1(s)-10\mathcal{Y}_2(s) \\
+        -y_2(0) + s\mathcal{Y}_2(s) &= \mathcal{Y}_1(s)+4\mathcal{Y}_2(s)
+    \end{align*}
+    Plugging in the initial values and solving for $\mathcal{Y}_1(s)$ and
+    $\mathcal{Y}_2(s)$ gives
+    \begin{align*}
+        \mathcal{Y}_1(s) &= \frac{s-4}{s^2-s-2} = \frac{5/3}{s+1}-\frac{2/3}{s-2}\\
+        \mathcal{Y}_2(s) &= \frac{1}{s^2-s-2} = \frac{1/3}{s-2}-\frac{1/3}{s+1}.
+    \end{align*}
+    Taking the inverse laplace transfrom of both we obtain the solution to be
+    \begin{align*}
+        y_1(t) &= \frac{5}{3}e^{-t}-\frac{2}{3}e^{2t} \\
+        y_2(t) &= -\frac{1}{3}e^{-t} + \frac{1}{3}e^{2t}.
+    \end{align*}
+\end{soln}
+
+\begin{example}
+    Solve for $y_1(t)$ and $y_2(t)$:
+    \begin{align*}
+        y_1' &= y_2 \\
+        y_2' &= -4y_1,
+    \end{align*}
+    given $y(0) = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$.
+\end{example}
+
+\begin{soln}
+    Taking the laplace transform of both equations, we find that
+    \begin{align*}
+        -y_1(0)+s\mathcal{Y}_1(s) &= \mathcal{Y}_2(s) \\
+        -y_2(0)+s\mathcal{Y}_2(s) &= -4\mathcal{Y}_1(s).
+    \end{align*}
+    Plugging in the initial values ans solving for $\mathcal{Y}_1(s)$ and
+    $\mathcal{Y}_2(s)$ gives
+    \begin{align*}
+        \mathcal{Y}_1(s) &= \frac{1}{s^2+4} = \frac{1}{2}\frac{2}{s^2+4}\\
+        \mathcal{Y}_2(s) &= \frac{s}{s^2+4}.
+    \end{align*}
+    Taking the inverse laplace transform of both we obtain the solution to be
+    \begin{align*}
+        y_1(t) &= \frac{1}{2}\sin(2t) \\
+        y_2(t) &= \cos(2t).
+    \end{align*}
+\end{soln}
+
+\begin{example}
+    Solve for $y_1(t)$ and $y_2(t)$:
+    \begin{align*}
+        y_1' &= 8y_1 + y_2 \\
+        y_2' &= -4y_1 + 4y_2,
+    \end{align*}
+    given $y(0) = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$
+\end{example}
+\begin{soln}
+    Taking the laplace transfrom of both equations, we find that 
+    \begin{align*}
+        -y_1(0)+s\mathcal{Y}_1(s) &= 8\mathcal{Y}_1(s) + \mathcal{Y}_2(s) \\
+        -y_2(0)+s\mathcal{Y}_2(s) &= -4\mathcal{Y}_1(s)+4\mathcal{Y}_2(s).
+    \end{align*}
+    Plugging in the initial values and solving for $\mathcal{Y}_1(s)$ and
+    $\mathcal{Y}_2(s)$ gives
+    \begin{align*}
+        \mathcal{Y}_1(s) &= \\
+        \mathcal{Y}_2(s) &=
+    \end{align*}
+\end{soln}
+
+\begin{example}
+    Solve for $y(t)$:
+    $$ty''-(t+1)y'+ y = 0,$$
+    given $y'(0)=0$.
+\end{example}
+
+\begin{soln}
+    We first notice that
+    \begin{align*}
+        \mathcal{L}\{ty''\} &= -\frac{\dif}{\dif s} \left(-y'(0)-sy(0)+s^2\mathcal{Y}(s)\right) \\
+                            &= -2s\mathcal{Y}(s)-s^2 \frac{\dif \mathcal{Y}(s)}{\dif s} \\
+        \mathcal{L}\{ty'\} &= -\frac{\dif }{\dif s}\left(-y(0)+s\mathcal{Y}(s)\right) \\
+                           &= -\mathcal{Y}(s)-s \frac{\dif \mathcal{Y}(s)}{\dif s}.
+    \end{align*}
+    Thus, taking the laplace transform of both sides and rearranging gives
+    \begin{align*}
+        (s-s^2)\mathcal{Y}'(s)+(2-3s)\mathcal{Y}(s) = 0 &\implies (s-s^2)\mathcal{Y}'(s) = (3s-2)\mathcal{Y}(s) \\
+                                                        &\implies \frac{\mathcal{Y}'(s)}{\mathcal{Y}(s)} = \frac{2-3s}{s^2-s} \\
+                                                        &\implies \ln \mathcal{Y}(s) = \int -\frac{2}{s}-\frac{1}{s-1} \\
+                                                        &\implies \ln \mathcal{Y}(s) = -2\ln | s | - \ln | s - 1 | \\
+                                                        &\implies \mathcal{Y}(s)  = \frac{1}{s^2(s-1)} \\
+                                                        &\implies \mathcal{Y}(s) = -\frac{1}{s}-\frac{1}{s^2}+\frac{1}{s-1} \\
+                                                        &\implies y(t) = e^{t}-t-1.
+    \end{align*}
+\end{soln}
+
+\begin{example}
+    Solve for $y(t)$:
+    $$ty''+2y'+4ty=0,$$
+    given $y(0) = 1$.
+\end{example}
+\begin{soln}
+    We first notice that
+    \begin{align*}
+        \mathcal{L}\{ty''\} &= -\frac{\dif}{\dif s} \left(-y'(0)-sy(0)+s^2\mathcal{Y}(s)\right) \\
+                            &= -s\mathcal{Y}(s)-s^2 \frac{\dif \mathcal{Y}(s)}{\dif s} \\
+        \mathcal{Y}\{ty\} &= 
+    \end{align*}
 \end{soln}
