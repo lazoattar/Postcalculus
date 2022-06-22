@@ -1,4 +1,5 @@
 asy/
+tex/
 *.sty
 *.asy
 *.tex
@@ -6,3 +7,6 @@ asy/
 *.fdb_latexmk
 *.fls
 *.log
+*.pre
+*.gz
+*.toc
