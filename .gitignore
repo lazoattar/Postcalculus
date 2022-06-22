@@ -1,5 +1,6 @@
 asy/
 tex/
+postcalnotes-1.pdf
 *.sty
 *.asy
 *.tex
@@ -10,3 +11,4 @@ tex/
 *.pre
 *.gz
 *.toc
+*.out
