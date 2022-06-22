@@ -252,7 +252,15 @@ equations.
     We first notice that
     \begin{align*}
         \mathcal{L}\{ty''\} &= -\frac{\dif}{\dif s} \left(-y'(0)-sy(0)+s^2\mathcal{Y}(s)\right) \\
-                            &= -s\mathcal{Y}(s)-s^2 \frac{\dif \mathcal{Y}(s)}{\dif s} \\
-        \mathcal{Y}\{ty\} &= 
+                            &= 1-2s\mathcal{Y}(s)-s^2 \frac{\dif \mathcal{Y}(s)}{\dif s} \\
+        \mathcal{L}\{ty\} &= -\frac{\dif \mathcal{Y}(s)}{\dif s}.
+    \end{align*}
+    Therefore, taking the laplace transform of both sides and rearranging gives
+    \begin{align*}
+        \frac{\dif \mathcal{Y}(s)}{\dif s} = \frac{-1}{s^2+4}.
+    \end{align*}
+    Taking the inverse laplace transform of both sides gives
+    \begin{align*}
+        -ty = -\frac{1}{2}\sin 2t \implies y(t) = \frac{\sin 2t}{2t}.
     \end{align*}
 \end{soln}
